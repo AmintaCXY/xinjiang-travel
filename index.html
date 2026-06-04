@@ -1467,10 +1467,26 @@
     }
   }
 
+  // Map layout switch for mobile/desktop
+  function switchMapLayout() {
+    var desktop = document.querySelector('.map-desktop');
+    var mobile = document.querySelector('.map-mobile');
+    if (!desktop || !mobile) return;
+    if (window.innerWidth <= 600) {
+      desktop.style.display = 'none';
+      mobile.style.display = 'block';
+    } else {
+      desktop.style.display = 'block';
+      mobile.style.display = 'none';
+    }
+  }
+  window.addEventListener('resize', switchMapLayout);
+
   // Auto-open Day 1 on load
   window.addEventListener('load', function() {
     const firstCard = document.querySelector('#day-1 .day-card');
     if (firstCard) firstCard.classList.add('open');
+    switchMapLayout();
   });
 </script>
 </body>
