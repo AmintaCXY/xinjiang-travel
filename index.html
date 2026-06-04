@@ -138,26 +138,22 @@
   /* ===== COST OVERVIEW ===== */
   .cost-overview {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 12px;
-    margin: 24px 0;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin: 16px 0;
   }
 
   .cost-card {
     background: white;
-    border-radius: 16px;
-    padding: 16px 14px;
+    border-radius: 12px;
+    padding: 12px 10px;
     text-align: center;
-    box-shadow: 0 2px 12px var(--shadow);
-    border: 2px solid var(--border);
-    transition: transform 0.2s;
+    border: 1px solid var(--border);
   }
 
-  .cost-card:hover { transform: translateY(-3px); }
-
-  .cost-card .icon { font-size: 24px; margin-bottom: 6px; }
-  .cost-card .label { font-size: 11px; color: var(--text-light); margin-bottom: 4px; }
-  .cost-card .amount { font-size: 18px; font-weight: bold; color: var(--orange); }
+  .cost-card .icon { font-size: 20px; margin-bottom: 4px; }
+  .cost-card .label { font-size: 11px; color: var(--text-light); margin-bottom: 2px; }
+  .cost-card .amount { font-size: 16px; font-weight: bold; color: var(--orange); }
   .cost-card .unit { font-size: 10px; color: var(--text-light); }
 
   /* ===== TIMELINE ===== */
@@ -711,40 +707,6 @@
         <line x1="0" y1="398" x2="920" y2="398" stroke="#D5C4A0" stroke-width="1"/>
         <text x="460" y="413" text-anchor="middle" font-size="8.5" fill="#7A5C4A">DAY1-2 乌鲁木齐 | DAY3 赛里木湖 | DAY4-5 伊宁 | DAY5 昭苏 | DAY6-7 夏塔 | DAY7 库尔德宁 | DAY8-9 那拉提 | DAY10 伊宁 | DAY11 返程</text>
       </svg>
-    </div>
-  </div>
-
-  <!-- ===== COST OVERVIEW ===== -->
-  <div class="cost-overview">
-    <div class="cost-card">
-      <div class="icon">✈️</div>
-      <div class="label">交通费（人均）</div>
-      <div class="amount">~780元</div>
-      <div class="unit">含往返机票</div>
-    </div>
-    <div class="cost-card">
-      <div class="icon">🏨</div>
-      <div class="label">住宿费（人均）</div>
-      <div class="amount">~553元</div>
-      <div class="unit">9晚 2人间</div>
-    </div>
-    <div class="cost-card">
-      <div class="icon">🎟</div>
-      <div class="label">景点门票（人均）</div>
-      <div class="amount">~784元</div>
-      <div class="unit">全程票价合计</div>
-    </div>
-    <div class="cost-card">
-      <div class="icon">🍽</div>
-      <div class="label">餐饮（人均）</div>
-      <div class="amount">~500元</div>
-      <div class="unit">含特色美食</div>
-    </div>
-    <div class="cost-card" style="border-color: var(--orange); background: var(--orange-light);">
-      <div class="icon">💰</div>
-      <div class="label">人均总费用</div>
-      <div class="amount" style="font-size:22px;">~2,617元</div>
-      <div class="unit">不含个人消费</div>
     </div>
   </div>
 
@@ -1326,6 +1288,40 @@
       <div class="tip-item"><span class="tip-icon">⛰</span><span>那拉提约1800-2200m，赛里木湖约2073m，基本无明显高反</span></div>
       <div class="tip-item"><span class="tip-icon">⏰</span><span>新疆实际时间比北京时间慢约2小时，安排行程需注意</span></div>
       <div class="tip-item"><span class="tip-icon">📱</span><span>下载：12306（火车票）、车来了（区间车）、飞猪（机票）</span></div>
+    </div>
+  </div>
+
+  <!-- ===== COST OVERVIEW ===== -->
+  <div class="cost-overview">
+    <div class="cost-card">
+      <div class="icon">✈️</div>
+      <div class="label">交通费（人均）</div>
+      <div class="amount">~780元</div>
+      <div class="unit">含往返机票</div>
+    </div>
+    <div class="cost-card">
+      <div class="icon">🏨</div>
+      <div class="label">住宿费（人均）</div>
+      <div class="amount">~553元</div>
+      <div class="unit">9晚 2人间</div>
+    </div>
+    <div class="cost-card">
+      <div class="icon">🎟</div>
+      <div class="label">景点门票（人均）</div>
+      <div class="amount">~784元</div>
+      <div class="unit">全程票价合计</div>
+    </div>
+    <div class="cost-card">
+      <div class="icon">🍽</div>
+      <div class="label">餐饮（人均）</div>
+      <div class="amount">~500元</div>
+      <div class="unit">含特色美食</div>
+    </div>
+    <div class="cost-card">
+      <div class="icon">💰</div>
+      <div class="label">人均总费用</div>
+      <div class="amount">~2,617元</div>
+      <div class="unit">不含个人消费</div>
     </div>
   </div>
 
