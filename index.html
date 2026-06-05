@@ -220,6 +220,96 @@
   }
   .weather-note strong { color: var(--orange); }
 
+  /* ===== DAY NAV ===== */
+  .day-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    transform: translateY(-100%);
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+  }
+
+  .day-nav.visible {
+    transform: translateY(0);
+  }
+
+  .day-nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .day-nav-inner::-webkit-scrollbar { display: none; }
+
+  .day-nav-label {
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--text-light);
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-right: 4px;
+    letter-spacing: 1px;
+  }
+
+  .day-nav-btn {
+    flex-shrink: 0;
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1.5px solid var(--border);
+    background: var(--sand);
+    color: var(--text-light);
+    white-space: nowrap;
+    transition: all 0.2s;
+    user-select: none;
+  }
+
+  .day-nav-btn:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+    background: var(--orange-light);
+  }
+
+  .day-nav-btn.active {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: white;
+    box-shadow: 0 2px 8px rgba(255,149,68,0.35);
+  }
+
+  .day-nav-btn.color-orange { --nav-color: var(--orange); }
+  .day-nav-btn.color-pink   { --nav-color: var(--pink); }
+  .day-nav-btn.color-green  { --nav-color: var(--green); }
+  .day-nav-btn.color-blue   { --nav-color: var(--blue); }
+  .day-nav-btn.color-purple { --nav-color: var(--purple); }
+
+  .day-nav-btn.active.color-orange { background: var(--orange); border-color: var(--orange); }
+  .day-nav-btn.active.color-pink   { background: var(--pink);   border-color: var(--pink); }
+  .day-nav-btn.active.color-green  { background: var(--green);  border-color: var(--green); }
+  .day-nav-btn.active.color-blue   { background: var(--blue);   border-color: var(--blue); }
+  .day-nav-btn.active.color-purple { background: var(--purple); border-color: var(--purple); }
+
+  @media (max-width: 600px) {
+    .day-nav-inner { padding: 6px 12px; gap: 3px; }
+    .day-nav-btn { padding: 3px 8px; font-size: 10px; }
+    .day-nav-label { font-size: 10px; }
+  }
+
   /* ===== TIMELINE ===== */
   .timeline-section {
     margin-top: 24px;
@@ -581,6 +671,24 @@
 </style>
 </head>
 <body>
+
+<!-- ===== DAY NAV ===== -->
+<div class="day-nav" id="dayNav">
+  <div class="day-nav-inner" id="dayNavInner">
+    <span class="day-nav-label">行程</span>
+    <button class="day-nav-btn color-orange" onclick="navToDay(1)">D1 乌鲁木齐</button>
+    <button class="day-nav-btn color-pink"   onclick="navToDay(2)">D2 飞伊宁</button>
+    <button class="day-nav-btn color-pink"   onclick="navToDay(3)">D3 伊宁</button>
+    <button class="day-nav-btn color-green"  onclick="navToDay(4)">D4 霍城💜</button>
+    <button class="day-nav-btn color-green"  onclick="navToDay(5)">D5 赛里木湖★</button>
+    <button class="day-nav-btn color-green"  onclick="navToDay(6)">D6 特克斯</button>
+    <button class="day-nav-btn color-green"  onclick="navToDay(7)">D7 喀拉峻</button>
+    <button class="day-nav-btn color-blue"   onclick="navToDay(8)">D8 那拉提</button>
+    <button class="day-nav-btn color-blue"   onclick="navToDay(9)">D9 那拉提</button>
+    <button class="day-nav-btn color-blue"   onclick="navToDay(10)">D10 返伊宁</button>
+    <button class="day-nav-btn color-purple" onclick="navToDay(11)">D11 返程🚄</button>
+  </div>
+</div>
 
 <!-- ===== HEADER ===== -->
 <div class="header">
@@ -1763,6 +1871,89 @@
     }
   }
   window.addEventListener('resize', switchMapLayout);
+
+  // ===== DAY NAV LOGIC =====
+  (function() {
+    var nav = document.getElementById('dayNav');
+    var timelineSection = null;
+    var dayItems = [];
+    var navBtns = [];
+    var activeDay = -1;
+
+    function init() {
+      timelineSection = document.querySelector('.timeline-section');
+      dayItems = Array.from({ length: 11 }, function(_, i) {
+        return document.getElementById('day-' + (i + 1));
+      });
+      navBtns = Array.from(document.querySelectorAll('.day-nav-btn'));
+    }
+
+    // 判断导航栏是否应该显示（滚动到行程区域时）
+    function updateNavVisibility() {
+      if (!timelineSection) return;
+      var rect = timelineSection.getBoundingClientRect();
+      // 进入行程区域（顶部离开视口之前 80px 开始显示，底部离开视口后隐藏）
+      var shouldShow = rect.top < 80 && rect.bottom > 60;
+      if (shouldShow) {
+        nav.classList.add('visible');
+      } else {
+        nav.classList.remove('visible');
+      }
+    }
+
+    // 高亮当前可见的 day（取最靠近顶部的那张卡片）
+    function updateActiveDay() {
+      var navHeight = 48;
+      var best = -1;
+      for (var i = 0; i < dayItems.length; i++) {
+        if (!dayItems[i]) continue;
+        var rect = dayItems[i].getBoundingClientRect();
+        // 卡片顶部在导航下方且最靠近顶部
+        if (rect.top <= navHeight + 40) {
+          best = i;
+        }
+      }
+      if (best !== activeDay) {
+        activeDay = best;
+        navBtns.forEach(function(btn, i) {
+          btn.classList.toggle('active', i === best);
+        });
+        // 自动将当前按钮滚动到导航栏可见区域
+        if (best >= 0 && navBtns[best]) {
+          navBtns[best].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      }
+    }
+
+    function onScroll() {
+      updateNavVisibility();
+      updateActiveDay();
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // 点击导航跳转
+    window.navToDay = function(dayNum) {
+      var el = document.getElementById('day-' + dayNum);
+      if (!el) return;
+      // 展开卡片
+      var card = el.querySelector('.day-card');
+      if (card && !card.classList.contains('open')) {
+        card.classList.add('open');
+      }
+      // 滚动到卡片，预留导航栏高度
+      var navHeight = nav.classList.contains('visible') ? 48 : 0;
+      var top = el.getBoundingClientRect().top + window.pageYOffset - navHeight - 12;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    };
+
+    // 初始化
+    window.addEventListener('load', function() {
+      init();
+      updateNavVisibility();
+      updateActiveDay();
+    });
+  })();
 
   // Auto-open Day 1 on load
   window.addEventListener('load', function() {
