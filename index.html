@@ -320,7 +320,13 @@
   .vday-nav-node.color-purple .vday-nav-line { background: var(--purple); opacity: 0.4; }
 
   @media (max-width: 600px) {
-    .vday-nav { display: none; }
+    .vday-nav {
+      width: 44px;
+      margin-left: -50px;
+    }
+    .vday-nav-dot { width: 22px; height: 22px; font-size: 7.5px; }
+    .vday-nav-line { height: 12px; }
+    .vday-nav-tooltip { display: none; }
   }
 
   /* ===== TIMELINE ===== */
@@ -624,7 +630,7 @@
     .cost-card .amount { font-size: 15px; }
     .cost-card .unit { font-size: 9px; }
 
-    .timeline { padding-left: 0; }
+    .timeline { padding-left: 50px; }
     .day-item { margin-bottom: 12px; }
 
     .day-card:hover { transform: none; box-shadow: 0 2px 12px var(--shadow); }
