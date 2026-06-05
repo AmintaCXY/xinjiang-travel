@@ -234,6 +234,8 @@
     gap: 0;
     padding: 0;
     pointer-events: auto;
+    height: calc(100vh - 40px);
+    max-height: 900px;
   }
 
   .vday-nav-node {
@@ -243,6 +245,11 @@
     align-items: center;
     cursor: pointer;
     user-select: none;
+    flex-shrink: 0;
+  }
+  /* 有连线的节点让 line 撑开 */
+  .vday-nav-node:not(:last-child) {
+    flex: 1 1 0;
   }
 
   .vday-nav-dot {
@@ -276,7 +283,8 @@
 
   .vday-nav-line {
     width: 3px;
-    height: 16px;
+    flex: 1 1 0;
+    min-height: 8px;
     background: var(--border);
     transition: background 0.3s;
   }
@@ -323,9 +331,11 @@
     .vday-nav {
       width: 44px;
       margin-left: -50px;
+      height: calc(100vh - 40px);
+      max-height: 800px;
     }
     .vday-nav-dot { width: 22px; height: 22px; font-size: 7.5px; }
-    .vday-nav-line { height: 12px; }
+    .vday-nav-line { min-height: 6px; }
     .vday-nav-tooltip { display: none; }
   }
 
