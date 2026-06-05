@@ -161,6 +161,52 @@
   .cost-card .amount { font-size: 16px; font-weight: bold; color: var(--orange); }
   .cost-card .unit { font-size: 10px; color: var(--text-light); }
 
+  /* ===== WEATHER TABLE SECTION ===== */
+  .weather-section {
+    background: white;
+    border-radius: 20px;
+    margin: 24px 0 0;
+    padding: 20px;
+    box-shadow: 0 4px 20px var(--shadow);
+    border: 2px solid var(--border);
+    overflow-x: auto;
+  }
+
+  .weather-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    min-width: 600px;
+  }
+
+  .weather-table th {
+    background: var(--sand-dark);
+    color: var(--text);
+    padding: 7px 8px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid var(--border);
+  }
+
+  .weather-table td {
+    padding: 6px 8px;
+    text-align: center;
+    border: 1px solid var(--border);
+    color: var(--text-light);
+    white-space: nowrap;
+  }
+
+  .weather-table tr:nth-child(even) td { background: #FAFAF5; }
+  .weather-table .golden-day td { background: #FFF9C4 !important; font-weight: bold; color: #7A5C00; }
+  .weather-table .date-col { font-weight: bold; color: var(--text); background: var(--sand) !important; }
+  .weather-note {
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 10px;
+    line-height: 1.8;
+  }
+  .weather-note strong { color: var(--orange); }
+
   /* ===== TIMELINE ===== */
   .timeline-section {
     margin-top: 24px;
@@ -178,11 +224,11 @@
     bottom: 20px;
     width: 3px;
     background: linear-gradient(to bottom,
-      var(--orange) 0%, var(--orange) 28%,
-      var(--pink) 28%, var(--pink) 36%,
-      var(--green) 36%, var(--green) 70%,
-      var(--blue) 70%, var(--blue) 90%,
-      var(--purple) 90%, var(--purple) 100%
+      var(--orange) 0%, var(--orange) 9%,
+      var(--pink) 9%, var(--pink) 27%,
+      var(--green) 27%, var(--green) 55%,
+      var(--blue) 55%, var(--blue) 82%,
+      var(--purple) 82%, var(--purple) 100%
     );
     border-radius: 3px;
   }
@@ -314,6 +360,12 @@
     color: #7A5C00;
   }
 
+  .detail-tip.green {
+    background: #F1F8E9;
+    border-left-color: var(--green);
+    color: #2D6E2D;
+  }
+
   .cost-inline {
     display: inline-block;
     background: var(--orange-light);
@@ -399,6 +451,43 @@
 
   .tip-icon { font-size: 18px; flex-shrink: 0; }
 
+  /* ===== DECISION TABLE ===== */
+  .decision-section {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 24px;
+    box-shadow: 0 4px 20px var(--shadow);
+    border: 2px solid var(--border);
+  }
+
+  .decision-list {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .decision-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px 14px;
+    background: var(--sand);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .decision-date {
+    flex-shrink: 0;
+    font-weight: bold;
+    color: var(--orange);
+    white-space: nowrap;
+    min-width: 60px;
+  }
+
   /* ===== FOOTER ===== */
   .footer {
     text-align: center;
@@ -438,6 +527,8 @@
     .map-desktop { display: none; }
     .map-mobile { display: block; }
 
+    .weather-section { margin: 16px 0 0; padding: 14px; border-radius: 16px; }
+
     .cost-overview { gap: 8px; margin: 16px 0; }
     .cost-card { padding: 12px 10px; border-radius: 14px; }
     .cost-card .icon { font-size: 20px; }
@@ -461,7 +552,7 @@
     .detail-item { font-size: 13px; gap: 8px; padding: 6px 0; }
     .detail-icon { font-size: 15px; }
 
-    .food-section, .tips-section { margin-top: 16px; padding: 14px; border-radius: 16px; }
+    .food-section, .tips-section, .decision-section { margin-top: 16px; padding: 14px; border-radius: 16px; }
     .food-grid, .tips-grid { grid-template-columns: 1fr; gap: 10px; margin-top: 10px; }
     .food-group { padding: 12px; border-radius: 10px; }
     .food-group-title { font-size: 13px; }
@@ -481,12 +572,12 @@
 <!-- ===== HEADER ===== -->
 <div class="header">
   <div class="header-title">🏔 新疆北疆11天路书</div>
-  <div class="header-subtitle">乌鲁木齐 · 赛里木湖 · 伊犁 · 那拉提</div>
+  <div class="header-subtitle">乌鲁木齐 · 赛里木湖 · 霍城薰衣草 · 特克斯 · 那拉提</div>
   <div class="header-tags">
     <span class="header-tag">📅 6.11 - 6.21</span>
     <span class="header-tag">👥 4人同行</span>
     <span class="header-tag">🚌 公共交通为主</span>
-    <span class="header-tag">💰 人均约3,000元</span>
+    <span class="header-tag">💰 人均约2,524元</span>
   </div>
 </div>
 
@@ -496,19 +587,19 @@
   <div class="map-section">
     <div class="section-title">路线总览地图</div>
     <div class="map-wrap">
-            <svg class="map-desktop" viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">
+      <!-- 桌面横向地图 -->
+      <svg class="map-desktop" viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">
         <defs>
           <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stop-color="#F5EFE0"/>
             <stop offset="100%" stop-color="#E8F2E8"/>
           </linearGradient>
-          <marker id="arr-green"  markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,5 L5,2.5 z" fill="#52B788"/></marker>
           <marker id="arr-orange" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,5 L5,2.5 z" fill="#FF9544"/></marker>
           <marker id="arr-pink"   markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,5 L5,2.5 z" fill="#FF6B9D"/></marker>
+          <marker id="arr-green"  markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,5 L5,2.5 z" fill="#52B788"/></marker>
+          <marker id="arr-blue"   markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,5 L5,2.5 z" fill="#4AABDB"/></marker>
           <marker id="arr-purple" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,5 L5,2.5 z" fill="#9B59B6"/></marker>
-          <marker id="arr-red"    markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,5 L5,2.5 z" fill="#E74C3C"/></marker>
           <marker id="arr-cyan"   markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,5 L5,2.5 z" fill="#17A589"/></marker>
-          <marker id="arr-lgreen" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,5 L5,2.5 z" fill="#27AE60"/></marker>
           <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.15)"/>
           </filter>
@@ -516,185 +607,147 @@
             <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,0.2)"/>
           </filter>
         </defs>
-
         <!-- 背景 -->
         <rect width="920" height="420" fill="url(#bgGrad)" rx="14"/>
-
         <!-- 山脉装饰 -->
-        <path d="M 0,90 C 150,62 300,52 450,60 C 560,66 640,50 720,40 C 790,32 860,38 920,44 L 920,90 Z"
-              fill="#C8DCB8" opacity="0.4"/>
+        <path d="M 0,90 C 150,62 300,52 450,60 C 560,66 640,50 720,40 C 790,32 860,38 920,44 L 920,90 Z" fill="#C8DCB8" opacity="0.4"/>
         <path d="M 430,60 L 450,40 L 470,60 Z" fill="white" opacity="0.7"/>
         <path d="M 700,40 L 720,20 L 740,40 Z" fill="white" opacity="0.7"/>
         <path d="M 840,38 L 858,20 L 876,38 Z" fill="white" opacity="0.65"/>
 
-        <!-- ===== 图例 ===== -->
-        <rect x="18" y="18" width="148" height="110" rx="8" fill="white" opacity="0.82"/>
+        <!-- 图例 -->
+        <rect x="18" y="18" width="155" height="95" rx="8" fill="white" opacity="0.82"/>
         <text x="30" y="36" font-size="11" fill="#3D2B1F" font-weight="bold">图例</text>
-        <!-- D2 夜间火车 -->
-        <line x1="30" y1="50" x2="58" y2="50" stroke="#52B788" stroke-width="2.5" stroke-dasharray="6,3"/>
-        <text x="64" y="54" font-size="10" fill="#3D2B1F">D2 夜间火车</text>
-        <!-- 大巴/拼车 -->
-        <line x1="30" y1="68" x2="58" y2="68" stroke="#FF9544" stroke-width="3"/>
-        <text x="64" y="72" font-size="10" fill="#3D2B1F">大巴/拼车</text>
-        <!-- 包车游览 -->
-        <line x1="30" y1="86" x2="58" y2="86" stroke="#E74C3C" stroke-width="3"/>
-        <text x="64" y="90" font-size="10" fill="#3D2B1F">包车游览</text>
-        <!-- D10 返回伊宁 -->
-        <line x1="30" y1="104" x2="58" y2="104" stroke="#17A589" stroke-width="2" stroke-dasharray="5,4"/>
-        <text x="64" y="108" font-size="10" fill="#3D2B1F">D10 返回伊宁</text>
-        <!-- D11 飞回 -->
-        <line x1="30" y1="120" x2="58" y2="120" stroke="#27AE60" stroke-width="2" stroke-dasharray="4,5"/>
-        <text x="64" y="124" font-size="10" fill="#3D2B1F">D11 飞回</text>
+        <line x1="30" y1="50" x2="58" y2="50" stroke="#FF9544" stroke-width="3"/>
+        <text x="64" y="54" font-size="10" fill="#3D2B1F">大巴/包车</text>
+        <line x1="30" y1="66" x2="58" y2="66" stroke="#52B788" stroke-width="2.5" stroke-dasharray="7,3"/>
+        <text x="64" y="70" font-size="10" fill="#3D2B1F">✈ 飞机</text>
+        <line x1="30" y1="82" x2="58" y2="82" stroke="#9B59B6" stroke-width="2.5" stroke-dasharray="5,4"/>
+        <text x="64" y="86" font-size="10" fill="#3D2B1F">🚄 高铁返程</text>
+        <line x1="30" y1="98" x2="58" y2="98" stroke="#17A589" stroke-width="2" stroke-dasharray="5,4"/>
+        <text x="64" y="102" font-size="10" fill="#3D2B1F">D10 返伊宁</text>
 
-        <!-- ===== 节点坐标 =====
-          乌鲁木齐  cx=840 cy=130  (右上)
-          博乐      cx=640 cy=100  (中右上，夜间火车中转)
-          赛里木湖  cx=200 cy=130  (左)
-          伊宁      cx=390 cy=190  (中，折回)
-          昭苏      cx=200 cy=270  (左中下)
-          夏塔      cx=120 cy=340  (左下)
-          库尔德宁  cx=500 cy=290  (中下)
-          那拉提    cx=640 cy=270  (中右下)
+        <!-- 节点坐标：
+          乌鲁木齐 cx=820 cy=130
+          伊宁     cx=390 cy=200
+          霍城     cx=210 cy=130
+          赛里木湖 cx=130 cy=240
+          特克斯   cx=440 cy=310
+          那拉提   cx=630 cy=290
         -->
 
-        <!-- DAY2: 乌鲁木齐→博乐 夜间火车，上弧绿虚线 -->
-        <path d="M 820,124 C 790,80 740,62 690,56 C 668,54 650,60 642,94"
-              fill="none" stroke="#52B788" stroke-width="3.5" stroke-dasharray="12,5"
+        <!-- D2: 乌鲁木齐→伊宁 飞机（橙虚线） -->
+        <path d="M 798,128 C 750,100 680,88 620,92 C 560,96 500,116 450,180 C 430,200 415,200 408,200"
+              fill="none" stroke="#FF9544" stroke-width="3.5" stroke-dasharray="10,4"
+              stroke-linecap="round" marker-end="url(#arr-orange)" opacity="0.9"/>
+        <text x="630" y="78" text-anchor="middle" font-size="10.5" fill="#A05000" font-weight="bold">✈ D2 飞伊宁 ~350元</text>
+
+        <!-- D4: 伊宁→霍城 大巴（橙实线） -->
+        <path d="M 372,194 C 340,180 310,162 278,148 C 258,140 238,134 230,132"
+              fill="none" stroke="#FF9544" stroke-width="4"
+              stroke-linecap="round" marker-end="url(#arr-orange)" opacity="0.9"/>
+        <text x="306" y="160" text-anchor="middle" font-size="9.5" fill="#A05000">大巴40元→</text>
+
+        <!-- D5: 伊宁→赛里木湖 包车（绿色） -->
+        <path d="M 376,208 C 340,225 285,238 234,244"
+              fill="none" stroke="#52B788" stroke-width="4"
               stroke-linecap="round" marker-end="url(#arr-green)" opacity="0.9"/>
-        <text x="735" y="52" text-anchor="middle" font-size="10.5" fill="#2E8B6A" font-weight="bold">大巴·赛里木湖</text>
+        <text x="306" y="240" text-anchor="middle" font-size="9.5" fill="#2E8B6A">包车→赛里木湖</text>
 
-        <!-- DAY3: 博乐→赛里木湖，橙色主干 -->
-        <path d="M 624,100 C 570,108 490,116 430,122 C 370,128 300,130 238,130"
-              fill="none" stroke="#FF9544" stroke-width="4.5"
+        <!-- D5返程: 赛里木湖→伊宁 (绿虚) -->
+        <path d="M 148,244 C 200,228 290,218 368,208"
+              fill="none" stroke="#17A589" stroke-width="2.5" stroke-dasharray="7,4"
+              stroke-linecap="round" marker-end="url(#arr-cyan)" opacity="0.8"/>
+
+        <!-- D6: 伊宁→特克斯 大巴（橙） -->
+        <path d="M 398,218 C 410,252 422,278 432,302"
+              fill="none" stroke="#FF9544" stroke-width="4"
               stroke-linecap="round" marker-end="url(#arr-orange)" opacity="0.9"/>
-        <text x="430" y="115" text-anchor="middle" font-size="10" fill="#A05000">环湖自驾</text>
+        <text x="430" y="268" text-anchor="end" font-size="9.5" fill="#A05000">大巴40元</text>
 
-        <!-- DAY3续: 赛里木湖→伊宁 -->
-        <path d="M 218,138 C 255,155 315,170 370,183"
-              fill="none" stroke="#FF9544" stroke-width="4.5"
+        <!-- D8: 特克斯→那拉提 大巴（橙） -->
+        <path d="M 462,308 C 510,305 560,298 614,290"
+              fill="none" stroke="#FF9544" stroke-width="4"
               stroke-linecap="round" marker-end="url(#arr-orange)" opacity="0.9"/>
+        <text x="540" y="298" text-anchor="middle" font-size="9.5" fill="#A05000">大巴50元</text>
 
-        <!-- DAY5: 伊宁→昭苏，粉色 -->
-        <path d="M 373,200 C 340,218 290,242 242,262"
-              fill="none" stroke="#FF6B9D" stroke-width="4.5"
-              stroke-linecap="round" marker-end="url(#arr-pink)" opacity="0.9"/>
-        <text x="290" y="222" text-anchor="start" font-size="10" fill="#C2185B">→昭苏</text>
-
-        <!-- DAY6: 昭苏→夏塔，紫色 -->
-        <path d="M 188,280 C 168,298 148,318 128,332"
-              fill="none" stroke="#9B59B6" stroke-width="4.5"
-              stroke-linecap="round" marker-end="url(#arr-purple)" opacity="0.9"/>
-        <text x="138" y="298" text-anchor="start" font-size="10" fill="#6A1B9A">→夏塔</text>
-
-        <!-- DAY7: 夏塔→库尔德宁，红色 -->
-        <path d="M 138,342 C 220,332 340,316 420,306 C 448,302 470,298 484,295"
-              fill="none" stroke="#E74C3C" stroke-width="4.5"
-              stroke-linecap="round" marker-end="url(#arr-red)" opacity="0.9"/>
-        <text x="300" y="325" text-anchor="middle" font-size="10" fill="#B71C1C">→库尔德宁</text>
-
-        <!-- DAY8: 库尔德宁→那拉提，红色 -->
-        <path d="M 514,286 C 545,281 575,276 620,272"
-              fill="none" stroke="#E74C3C" stroke-width="4.5"
-              stroke-linecap="round" marker-end="url(#arr-red)" opacity="0.9"/>
-
-        <!-- DAY10: 那拉提→伊宁，青色虚线 -->
-        <path d="M 622,262 C 580,248 530,224 480,210 C 460,204 435,198 408,194"
-              fill="none" stroke="#17A589" stroke-width="3" stroke-dasharray="8,5"
+        <!-- D10: 那拉提→伊宁 大巴 （青虚） -->
+        <path d="M 617,280 C 575,255 525,232 480,220 C 455,213 428,208 408,206"
+              fill="none" stroke="#17A589" stroke-width="2.5" stroke-dasharray="7,4"
               stroke-linecap="round" marker-end="url(#arr-cyan)" opacity="0.85"/>
-        <text x="530" y="246" text-anchor="middle" font-size="10" fill="#17A589">D10 返回伊宁</text>
+        <text x="516" y="244" text-anchor="middle" font-size="9.5" fill="#17A589">D10 返伊宁75元</text>
 
-        <!-- DAY11: 伊宁→乌鲁木齐，浅绿虚线飞机 -->
-        <path d="M 393,178 C 460,148 580,118 690,102 C 730,96 775,100 818,118"
-              fill="none" stroke="#27AE60" stroke-width="2.5" stroke-dasharray="6,7"
-              stroke-linecap="round" marker-end="url(#arr-lgreen)" opacity="0.8"/>
-        <text x="590" y="98" text-anchor="middle" font-size="10" fill="#27AE60">D11 ✈ 飞回乌鲁木齐</text>
+        <!-- D11: 伊宁→乌鲁木齐 高铁 (紫虚) -->
+        <path d="M 406,190 C 480,158 620,128 740,120 C 768,118 792,122 810,126"
+              fill="none" stroke="#9B59B6" stroke-width="2.5" stroke-dasharray="6,5"
+              stroke-linecap="round" marker-end="url(#arr-purple)" opacity="0.85"/>
+        <text x="620" y="108" text-anchor="middle" font-size="10" fill="#9B59B6">D11 🚄 高铁约99元</text>
 
-        <!-- ===== 城市节点 ===== -->
+        <!-- 城市节点 -->
 
-        <!-- 乌鲁木齐 DAY1-2  cx=840 cy=130 -->
-        <g class="map-node" onclick="scrollToDay(1)" filter="url(#nodeShadow)" style="cursor:pointer">
-          <circle cx="840" cy="130" r="26" fill="#52B788" opacity="0.18"/>
-          <circle cx="840" cy="130" r="20" fill="#52B788" stroke="white" stroke-width="3"/>
-          <polygon points="840,156 831,140 849,140" fill="#52B788"/>
-          <text x="840" y="124" text-anchor="middle" font-size="15">🏙</text>
-          <text x="840" y="137" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">乌鲁木齐</text>
-          <rect x="810" y="160" width="60" height="17" rx="8" fill="#52B788"/>
-          <text x="840" y="173" text-anchor="middle" font-size="10.5" fill="white" font-weight="bold">DAY1-2</text>
+        <!-- 乌鲁木齐 DAY1 -->
+        <g class="map-node" onclick="scrollToDay(1)" filter="url(#nodeShadow)">
+          <circle cx="820" cy="130" r="26" fill="#52B788" opacity="0.18"/>
+          <circle cx="820" cy="130" r="20" fill="#52B788" stroke="white" stroke-width="3"/>
+          <polygon points="820,156 811,140 829,140" fill="#52B788"/>
+          <text x="820" y="124" text-anchor="middle" font-size="15">🏙</text>
+          <text x="820" y="137" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">乌鲁木齐</text>
+          <rect x="792" y="160" width="56" height="17" rx="8" fill="#52B788"/>
+          <text x="820" y="173" text-anchor="middle" font-size="10" fill="white" font-weight="bold">DAY1</text>
         </g>
 
-        <!-- 博乐 DAY2  cx=640 cy=100 -->
-        <g class="map-node" onclick="scrollToDay(2)" filter="url(#shadow)" style="cursor:pointer">
-          <circle cx="640" cy="100" r="16" fill="#52B788" stroke="white" stroke-width="2.5"/>
-          <polygon points="640,122 633,108 647,108" fill="#52B788"/>
-          <text x="640" y="95" text-anchor="middle" font-size="12">🚉</text>
-          <text x="640" y="107" text-anchor="middle" font-size="9" fill="white" font-weight="bold">博乐</text>
-          <rect x="620" y="125" width="40" height="14" rx="7" fill="#52B788" opacity="0.9"/>
-          <text x="640" y="136" text-anchor="middle" font-size="9.5" fill="white">DAY2</text>
+        <!-- 伊宁 DAY2-3, 10 -->
+        <g class="map-node" onclick="scrollToDay(2)" filter="url(#nodeShadow)">
+          <circle cx="390" cy="200" r="26" fill="#FF6B9D" opacity="0.15"/>
+          <circle cx="390" cy="200" r="20" fill="#FF6B9D" stroke="white" stroke-width="3"/>
+          <polygon points="390,226 381,210 399,210" fill="#FF6B9D"/>
+          <text x="390" y="194" text-anchor="middle" font-size="15">🌸</text>
+          <text x="390" y="207" text-anchor="middle" font-size="10" fill="white" font-weight="bold">伊宁</text>
+          <rect x="353" y="229" width="74" height="17" rx="8" fill="#FF6B9D"/>
+          <text x="390" y="242" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">D2-3 · D10</text>
         </g>
 
-        <!-- 赛里木湖 DAY3  cx=200 cy=130 -->
-        <g class="map-node" onclick="scrollToDay(3)" filter="url(#nodeShadow)" style="cursor:pointer">
-          <circle cx="200" cy="130" r="26" fill="#FF9544" opacity="0.18"/>
-          <circle cx="200" cy="130" r="20" fill="#FF9544" stroke="white" stroke-width="3"/>
-          <polygon points="200,156 191,140 209,140" fill="#FF9544"/>
-          <text x="200" y="124" text-anchor="middle" font-size="15">🏞</text>
-          <text x="200" y="137" text-anchor="middle" font-size="9" fill="white" font-weight="bold">赛里木湖</text>
-          <rect x="172" y="160" width="56" height="17" rx="8" fill="#FF9544"/>
-          <text x="200" y="173" text-anchor="middle" font-size="10.5" fill="white" font-weight="bold">DAY3</text>
+        <!-- 霍城 DAY4 -->
+        <g class="map-node" onclick="scrollToDay(4)" filter="url(#shadow)">
+          <circle cx="210" cy="130" r="16" fill="#FF9544" stroke="white" stroke-width="2.5"/>
+          <polygon points="210,152 202,136 218,136" fill="#FF9544"/>
+          <text x="210" y="125" text-anchor="middle" font-size="13">💜</text>
+          <text x="210" y="136" text-anchor="middle" font-size="9" fill="white" font-weight="bold">霍城</text>
+          <rect x="185" y="155" width="50" height="14" rx="7" fill="#FF9544"/>
+          <text x="210" y="166" text-anchor="middle" font-size="9.5" fill="white">DAY4</text>
         </g>
 
-        <!-- 伊宁 DAY4-5,10  cx=390 cy=190 -->
-        <g class="map-node" onclick="scrollToDay(4)" filter="url(#nodeShadow)" style="cursor:pointer">
-          <circle cx="390" cy="190" r="26" fill="#FF6B9D" opacity="0.15"/>
-          <circle cx="390" cy="190" r="20" fill="#FF6B9D" stroke="white" stroke-width="3"/>
-          <polygon points="390,216 381,200 399,200" fill="#FF6B9D"/>
-          <text x="390" y="184" text-anchor="middle" font-size="15">🌸</text>
-          <text x="390" y="197" text-anchor="middle" font-size="10" fill="white" font-weight="bold">伊宁</text>
-          <text x="390" y="166" text-anchor="middle" font-size="9.5" fill="#880E4F">六星街旅拍</text>
-          <rect x="357" y="219" width="66" height="17" rx="8" fill="#FF6B9D"/>
-          <text x="390" y="232" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">D4-5 · D10</text>
+        <!-- 赛里木湖 DAY5 -->
+        <g class="map-node" onclick="scrollToDay(5)" filter="url(#nodeShadow)">
+          <circle cx="130" cy="250" r="26" fill="#4AABDB" opacity="0.18"/>
+          <circle cx="130" cy="250" r="20" fill="#4AABDB" stroke="white" stroke-width="3"/>
+          <polygon points="130,276 121,260 139,260" fill="#4AABDB"/>
+          <text x="130" y="244" text-anchor="middle" font-size="15">💧</text>
+          <text x="130" y="257" text-anchor="middle" font-size="9" fill="white" font-weight="bold">赛里木湖</text>
+          <rect x="100" y="279" width="60" height="17" rx="8" fill="#4AABDB"/>
+          <text x="130" y="292" text-anchor="middle" font-size="10" fill="white" font-weight="bold">DAY5</text>
         </g>
 
-        <!-- 昭苏 DAY5  cx=200 cy=270 -->
-        <g class="map-node" onclick="scrollToDay(5)" filter="url(#shadow)" style="cursor:pointer">
-          <circle cx="200" cy="270" r="18" fill="#9B59B6" stroke="white" stroke-width="2.5"/>
-          <polygon points="200,294 192,278 208,278" fill="#9B59B6"/>
-          <text x="200" y="265" text-anchor="middle" font-size="13">🌺</text>
-          <text x="200" y="276" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">昭苏</text>
-          <rect x="176" y="297" width="48" height="15" rx="7" fill="#9B59B6" opacity="0.9"/>
-          <text x="200" y="309" text-anchor="middle" font-size="9.5" fill="white">DAY5</text>
+        <!-- 特克斯 DAY6-7 -->
+        <g class="map-node" onclick="scrollToDay(6)" filter="url(#nodeShadow)">
+          <circle cx="440" cy="315" r="22" fill="#5CB85C" opacity="0.18"/>
+          <circle cx="440" cy="315" r="17" fill="#5CB85C" stroke="white" stroke-width="2.5"/>
+          <polygon points="440,338 432,322 448,322" fill="#5CB85C"/>
+          <text x="440" y="310" text-anchor="middle" font-size="13">☯</text>
+          <text x="440" y="321" text-anchor="middle" font-size="9" fill="white" font-weight="bold">特克斯</text>
+          <rect x="410" y="342" width="60" height="16" rx="8" fill="#5CB85C"/>
+          <text x="440" y="354" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">DAY6-7</text>
         </g>
 
-        <!-- 夏塔 DAY6-7  cx=120 cy=340 -->
-        <g class="map-node" onclick="scrollToDay(6)" filter="url(#nodeShadow)" style="cursor:pointer">
-          <circle cx="120" cy="340" r="24" fill="#9B59B6" opacity="0.15"/>
-          <circle cx="120" cy="340" r="18" fill="#9B59B6" stroke="white" stroke-width="3"/>
-          <polygon points="120,364 112,348 128,348" fill="#9B59B6"/>
-          <text x="120" y="334" text-anchor="middle" font-size="14">🏔</text>
-          <text x="120" y="346" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">夏塔</text>
-          <rect x="92" y="367" width="56" height="17" rx="8" fill="#9B59B6"/>
-          <text x="120" y="380" text-anchor="middle" font-size="10" fill="white" font-weight="bold">DAY6-7</text>
-        </g>
-
-        <!-- 库尔德宁 DAY7  cx=500 cy=290 -->
-        <g class="map-node" onclick="scrollToDay(7)" filter="url(#shadow)" style="cursor:pointer">
-          <circle cx="500" cy="290" r="17" fill="#E74C3C" stroke="white" stroke-width="2.5"/>
-          <polygon points="500,313 492,297 508,297" fill="#E74C3C"/>
-          <text x="500" y="285" text-anchor="middle" font-size="12">🌿</text>
-          <text x="500" y="296" text-anchor="middle" font-size="8.5" fill="white" font-weight="bold">库尔德宁</text>
-          <rect x="470" y="316" width="60" height="15" rx="7" fill="#E74C3C" opacity="0.9"/>
-          <text x="500" y="328" text-anchor="middle" font-size="9.5" fill="white">DAY7</text>
-        </g>
-
-        <!-- 那拉提 DAY8-9  cx=640 cy=270 -->
-        <g class="map-node" onclick="scrollToDay(8)" filter="url(#nodeShadow)" style="cursor:pointer">
-          <circle cx="640" cy="270" r="26" fill="#2980B9" opacity="0.15"/>
-          <circle cx="640" cy="270" r="20" fill="#2980B9" stroke="white" stroke-width="3"/>
-          <polygon points="640,296 631,280 649,280" fill="#2980B9"/>
-          <text x="640" y="264" text-anchor="middle" font-size="15">🌄</text>
-          <text x="640" y="277" text-anchor="middle" font-size="10" fill="white" font-weight="bold">那拉提</text>
-          <rect x="610" y="299" width="60" height="17" rx="8" fill="#2980B9"/>
-          <text x="640" y="312" text-anchor="middle" font-size="10" fill="white" font-weight="bold">DAY8-9</text>
+        <!-- 那拉提 DAY8-9 -->
+        <g class="map-node" onclick="scrollToDay(8)" filter="url(#nodeShadow)">
+          <circle cx="630" cy="295" r="26" fill="#2980B9" opacity="0.15"/>
+          <circle cx="630" cy="295" r="20" fill="#2980B9" stroke="white" stroke-width="3"/>
+          <polygon points="630,321 621,305 639,305" fill="#2980B9"/>
+          <text x="630" y="289" text-anchor="middle" font-size="15">🌄</text>
+          <text x="630" y="302" text-anchor="middle" font-size="10" fill="white" font-weight="bold">那拉提</text>
+          <rect x="600" y="324" width="60" height="17" rx="8" fill="#2980B9"/>
+          <text x="630" y="337" text-anchor="middle" font-size="10" fill="white" font-weight="bold">DAY8-9</text>
         </g>
 
         <!-- 提示文字 -->
@@ -703,112 +756,238 @@
         <!-- 底部摘要条 -->
         <rect x="0" y="398" width="920" height="22" fill="rgba(255,255,255,0.6)"/>
         <line x1="0" y1="398" x2="920" y2="398" stroke="#D5C4A0" stroke-width="1"/>
-        <text x="460" y="413" text-anchor="middle" font-size="8.5" fill="#7A5C4A">DAY1-2 乌鲁木齐 | DAY3 赛里木湖 | DAY4-5 伊宁 | DAY5 昭苏 | DAY6-7 夏塔 | DAY7 库尔德宁 | DAY8-9 那拉提 | DAY10 伊宁 | DAY11 返程</text>
+        <text x="460" y="413" text-anchor="middle" font-size="8.5" fill="#7A5C4A">DAY1 乌鲁木齐 | DAY2-3 伊宁 | DAY4 霍城薰衣草 | DAY5 赛里木湖★ | DAY6-7 特克斯/喀拉峻 | DAY8-9 那拉提 | DAY10 伊宁 | DAY11 高铁返程</text>
       </svg>
-      <svg class="map-mobile" viewBox="0 0 380 780" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">
+
+      <!-- 移动端纵向地图 -->
+      <svg class="map-mobile" viewBox="0 0 380 820" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">
         <defs>
           <linearGradient id="bgGradM" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stop-color="#F5EFE0"/>
             <stop offset="100%" stop-color="#E8F2E8"/>
           </linearGradient>
-          <marker id="am-green" markerWidth="5" markerHeight="5" refX="2.5" refY="4" orient="auto"><path d="M0,0 L5,0 L2.5,5 z" fill="#52B788"/></marker>
           <marker id="am-orange" markerWidth="5" markerHeight="5" refX="2.5" refY="4" orient="auto"><path d="M0,0 L5,0 L2.5,5 z" fill="#FF9544"/></marker>
-          <marker id="am-pink" markerWidth="5" markerHeight="5" refX="2.5" refY="4" orient="auto"><path d="M0,0 L5,0 L2.5,5 z" fill="#FF6B9D"/></marker>
+          <marker id="am-green"  markerWidth="5" markerHeight="5" refX="2.5" refY="4" orient="auto"><path d="M0,0 L5,0 L2.5,5 z" fill="#52B788"/></marker>
+          <marker id="am-cyan"   markerWidth="5" markerHeight="5" refX="2.5" refY="4" orient="auto"><path d="M0,0 L5,0 L2.5,5 z" fill="#17A589"/></marker>
           <marker id="am-purple" markerWidth="5" markerHeight="5" refX="2.5" refY="4" orient="auto"><path d="M0,0 L5,0 L2.5,5 z" fill="#9B59B6"/></marker>
-          <marker id="am-red" markerWidth="5" markerHeight="5" refX="2.5" refY="4" orient="auto"><path d="M0,0 L5,0 L2.5,5 z" fill="#E74C3C"/></marker>
           <filter id="mShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.15)"/></filter>
         </defs>
-        <rect width="380" height="780" fill="url(#bgGradM)" rx="14"/>
+        <rect width="380" height="820" fill="url(#bgGradM)" rx="14"/>
+
         <!-- 图例 -->
-        <rect x="20" y="12" width="340" height="58" rx="8" fill="white" opacity="0.85"/>
-        <text x="32" y="30" font-size="11" fill="#3D2B1F" font-weight="bold">图例</text>
-        <line x1="32" y1="44" x2="55" y2="44" stroke="#52B788" stroke-width="2.5" stroke-dasharray="6,3"/>
-        <text x="62" y="48" font-size="10" fill="#3D2B1F">夜间火车</text>
-        <line x1="130" y1="44" x2="153" y2="44" stroke="#FF9544" stroke-width="3"/>
-        <text x="160" y="48" font-size="10" fill="#3D2B1F">大巴/拼车</text>
-        <line x1="230" y1="44" x2="253" y2="44" stroke="#E74C3C" stroke-width="3"/>
-        <text x="260" y="48" font-size="10" fill="#3D2B1F">包车游览</text>
-        <line x1="32" y1="60" x2="55" y2="60" stroke="#17A589" stroke-width="2" stroke-dasharray="5,4"/>
-        <text x="62" y="64" font-size="10" fill="#3D2B1F">D10 返回</text>
-        <line x1="130" y1="60" x2="153" y2="60" stroke="#27AE60" stroke-width="2" stroke-dasharray="4,5"/>
-        <text x="160" y="64" font-size="10" fill="#3D2B1F">D11 飞回</text>
-        <!-- 路线 -->
-        <path d="M 260,115 C 260,150 120,160 120,167" fill="none" stroke="#52B788" stroke-width="3" stroke-dasharray="10,4" stroke-linecap="round" marker-end="url(#am-green)" opacity="0.9"/>
-        <path d="M 120,193 C 120,225 260,235 260,247" fill="none" stroke="#FF9544" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-orange)" opacity="0.9"/>
-        <path d="M 260,283 C 260,315 120,325 120,332" fill="none" stroke="#FF9544" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-orange)" opacity="0.9"/>
-        <path d="M 120,368 C 120,400 260,410 260,421" fill="none" stroke="#FF6B9D" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-pink)" opacity="0.9"/>
-        <path d="M 260,449 C 260,481 120,491 120,504" fill="none" stroke="#9B59B6" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-purple)" opacity="0.9"/>
-        <path d="M 120,536 C 120,568 260,578 260,592" fill="none" stroke="#E74C3C" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-red)" opacity="0.9"/>
-        <path d="M 260,618 C 260,650 120,660 120,672" fill="none" stroke="#E74C3C" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-red)" opacity="0.9"/>
-        <!-- 乌鲁木齐 -->
+        <rect x="16" y="10" width="348" height="38" rx="8" fill="white" opacity="0.85"/>
+        <line x1="28" y1="29" x2="50" y2="29" stroke="#FF9544" stroke-width="3"/>
+        <text x="56" y="33" font-size="10" fill="#3D2B1F">大巴/包车</text>
+        <line x1="140" y1="29" x2="162" y2="29" stroke="#FF9544" stroke-width="2.5" stroke-dasharray="7,3"/>
+        <text x="168" y="33" font-size="10" fill="#3D2B1F">✈ 飞机</text>
+        <line x1="240" y1="29" x2="262" y2="29" stroke="#9B59B6" stroke-width="2" stroke-dasharray="5,4"/>
+        <text x="268" y="33" font-size="10" fill="#3D2B1F">🚄 高铁</text>
+
+        <!-- 连接线（锯齿形：奇数节点左x=100，偶数节点右x=260） -->
+        <!-- D1→D2 乌鲁木齐(右260)→伊宁(左100) 飞机虚线 -->
+        <path d="M 260,120 C 260,152 100,162 100,175" fill="none" stroke="#FF9544" stroke-width="3" stroke-dasharray="10,4" stroke-linecap="round" marker-end="url(#am-orange)" opacity="0.9"/>
+        <text x="190" y="148" text-anchor="middle" font-size="9.5" fill="#A05000">✈ 飞机~350元</text>
+
+        <!-- D3→D4 伊宁(左100)→霍城(右260) 大巴 -->
+        <path d="M 100,215 C 100,248 260,258 260,270" fill="none" stroke="#FF9544" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-orange)" opacity="0.9"/>
+        <text x="190" y="248" text-anchor="middle" font-size="9" fill="#A05000">大巴40元</text>
+
+        <!-- D4→D5 霍城(右260)→赛里木湖(左100) 包车 -->
+        <path d="M 260,310 C 260,342 100,352 100,365" fill="none" stroke="#52B788" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-green)" opacity="0.9"/>
+        <text x="190" y="343" text-anchor="middle" font-size="9" fill="#2E8B6A">包车+返伊宁</text>
+
+        <!-- D5→D6 赛里木湖→伊宁→特克斯(右260) -->
+        <path d="M 100,405 C 100,437 260,447 260,460" fill="none" stroke="#FF9544" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-orange)" opacity="0.9"/>
+        <text x="190" y="438" text-anchor="middle" font-size="9" fill="#A05000">→伊宁→大巴40元</text>
+
+        <!-- D7→D8 特克斯(右260)→那拉提(左100) -->
+        <path d="M 260,500 C 260,532 100,542 100,555" fill="none" stroke="#FF9544" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-orange)" opacity="0.9"/>
+        <text x="190" y="533" text-anchor="middle" font-size="9" fill="#A05000">大巴50元</text>
+
+        <!-- D9→D10 那拉提(左100)→伊宁(右260) 返回虚线 -->
+        <path d="M 100,600 C 100,635 260,645 260,658" fill="none" stroke="#17A589" stroke-width="2.5" stroke-dasharray="7,4" stroke-linecap="round" marker-end="url(#am-cyan)" opacity="0.85"/>
+        <text x="190" y="638" text-anchor="middle" font-size="9" fill="#17A589">D10 返伊宁75元</text>
+
+        <!-- D10→D11 伊宁(右260)→乌鲁木齐(左100) 高铁虚线 -->
+        <path d="M 260,700 C 260,735 100,745 100,758" fill="none" stroke="#9B59B6" stroke-width="2.5" stroke-dasharray="6,5" stroke-linecap="round" marker-end="url(#am-purple)" opacity="0.85"/>
+        <text x="190" y="730" text-anchor="middle" font-size="9" fill="#9B59B6">🚄 高铁~99元</text>
+
+        <!-- 节点 -->
+        <!-- 乌鲁木齐 DAY1 (右260) -->
         <g class="map-node" onclick="scrollToDay(1)" filter="url(#mShadow)">
-          <circle cx="260" cy="95" r="20" fill="#52B788" stroke="white" stroke-width="3"/>
-          <text x="260" y="89" text-anchor="middle" font-size="15">🏙</text>
-          <text x="260" y="100" text-anchor="middle" font-size="10" fill="white" font-weight="bold">乌鲁木齐</text>
-          <rect x="225" y="120" width="70" height="18" rx="9" fill="#52B788"/>
-          <text x="260" y="133" text-anchor="middle" font-size="10" fill="white" font-weight="bold">DAY1-2</text>
+          <circle cx="260" cy="100" r="20" fill="#52B788" stroke="white" stroke-width="3"/>
+          <text x="260" y="94" text-anchor="middle" font-size="15">🏙</text>
+          <text x="260" y="105" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">乌鲁木齐</text>
+          <rect x="225" y="125" width="70" height="17" rx="8" fill="#52B788"/>
+          <text x="260" y="138" text-anchor="middle" font-size="10" fill="white" font-weight="bold">DAY1</text>
         </g>
-        <!-- 博乐 -->
-        <g class="map-node" onclick="scrollToDay(2)">
-          <circle cx="120" cy="180" r="13" fill="#52B788" stroke="white" stroke-width="2.5"/>
-          <text x="120" y="176" text-anchor="middle" font-size="12">🚉</text>
-          <text x="120" y="185" text-anchor="middle" font-size="9" fill="white" font-weight="bold">博乐</text>
-          <rect x="95" y="196" width="50" height="14" rx="7" fill="#52B788"/>
-          <text x="120" y="207" text-anchor="middle" font-size="9" fill="white">DAY2</text>
+
+        <!-- 伊宁 DAY2-3 (左100) -->
+        <g class="map-node" onclick="scrollToDay(2)" filter="url(#mShadow)">
+          <circle cx="100" cy="195" r="20" fill="#FF6B9D" stroke="white" stroke-width="3"/>
+          <text x="100" y="189" text-anchor="middle" font-size="15">🌸</text>
+          <text x="100" y="200" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">伊宁</text>
+          <rect x="60" y="220" width="80" height="17" rx="8" fill="#FF6B9D"/>
+          <text x="100" y="233" text-anchor="middle" font-size="9" fill="white" font-weight="bold">DAY2-3·D10</text>
         </g>
-        <!-- 赛里木湖 -->
-        <g class="map-node" onclick="scrollToDay(3)" filter="url(#mShadow)">
-          <circle cx="260" cy="265" r="18" fill="#FF9544" stroke="white" stroke-width="3"/>
-          <text x="260" y="260" text-anchor="middle" font-size="14">🏞</text>
-          <text x="260" y="270" text-anchor="middle" font-size="9" fill="white" font-weight="bold">赛里木湖</text>
-          <rect x="228" y="287" width="64" height="17" rx="8" fill="#FF9544"/>
-          <text x="260" y="300" text-anchor="middle" font-size="10" fill="white" font-weight="bold">DAY3</text>
-        </g>
-        <!-- 伊宁 -->
+
+        <!-- 霍城 DAY4 (右260) -->
         <g class="map-node" onclick="scrollToDay(4)" filter="url(#mShadow)">
-          <circle cx="120" cy="350" r="18" fill="#FF6B9D" stroke="white" stroke-width="3"/>
-          <text x="120" y="345" text-anchor="middle" font-size="14">🌸</text>
-          <text x="120" y="355" text-anchor="middle" font-size="10" fill="white" font-weight="bold">伊宁</text>
-          <rect x="85" y="372" width="70" height="17" rx="8" fill="#FF6B9D"/>
-          <text x="120" y="385" text-anchor="middle" font-size="9" fill="white" font-weight="bold">D4-5 · D10</text>
+          <circle cx="260" cy="290" r="17" fill="#FF9544" stroke="white" stroke-width="2.5"/>
+          <text x="260" y="285" text-anchor="middle" font-size="14">💜</text>
+          <text x="260" y="296" text-anchor="middle" font-size="9" fill="white" font-weight="bold">霍城</text>
+          <rect x="228" y="312" width="64" height="15" rx="7" fill="#FF9544"/>
+          <text x="260" y="323" text-anchor="middle" font-size="9.5" fill="white">DAY4 薰衣草</text>
         </g>
-        <!-- 昭苏 -->
-        <g class="map-node" onclick="scrollToDay(5)">
-          <circle cx="260" cy="435" r="14" fill="#9B59B6" stroke="white" stroke-width="2.5"/>
-          <text x="260" y="431" text-anchor="middle" font-size="12">🌺</text>
-          <text x="260" y="440" text-anchor="middle" font-size="9" fill="white" font-weight="bold">昭苏</text>
-          <rect x="235" y="453" width="50" height="14" rx="7" fill="#9B59B6"/>
-          <text x="260" y="464" text-anchor="middle" font-size="9" fill="white">DAY5</text>
+
+        <!-- 赛里木湖 DAY5 (左100) -->
+        <g class="map-node" onclick="scrollToDay(5)" filter="url(#mShadow)">
+          <circle cx="100" cy="385" r="20" fill="#4AABDB" stroke="white" stroke-width="3"/>
+          <text x="100" y="379" text-anchor="middle" font-size="15">💧</text>
+          <text x="100" y="390" text-anchor="middle" font-size="9" fill="white" font-weight="bold">赛里木湖</text>
+          <rect x="65" y="410" width="70" height="17" rx="8" fill="#4AABDB"/>
+          <text x="100" y="423" text-anchor="middle" font-size="10" fill="white" font-weight="bold">DAY5 ★</text>
         </g>
-        <!-- 夏塔 -->
+
+        <!-- 特克斯 DAY6-7 (右260) -->
         <g class="map-node" onclick="scrollToDay(6)" filter="url(#mShadow)">
-          <circle cx="120" cy="520" r="16" fill="#9B59B6" stroke="white" stroke-width="3"/>
-          <text x="120" y="515" text-anchor="middle" font-size="13">🏔</text>
-          <text x="120" y="525" text-anchor="middle" font-size="9" fill="white" font-weight="bold">夏塔</text>
-          <rect x="88" y="540" width="64" height="17" rx="8" fill="#9B59B6"/>
-          <text x="120" y="553" text-anchor="middle" font-size="10" fill="white" font-weight="bold">DAY6-7</text>
+          <circle cx="260" cy="480" r="18" fill="#5CB85C" stroke="white" stroke-width="3"/>
+          <text x="260" y="475" text-anchor="middle" font-size="14">☯</text>
+          <text x="260" y="486" text-anchor="middle" font-size="9" fill="white" font-weight="bold">特克斯</text>
+          <rect x="226" y="503" width="68" height="17" rx="8" fill="#5CB85C"/>
+          <text x="260" y="516" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">DAY6-7</text>
         </g>
-        <!-- 库尔德宁 -->
-        <g class="map-node" onclick="scrollToDay(7)">
-          <circle cx="260" cy="605" r="13" fill="#E74C3C" stroke="white" stroke-width="2.5"/>
-          <text x="260" y="601" text-anchor="middle" font-size="11">🌿</text>
-          <text x="260" y="610" text-anchor="middle" font-size="8" fill="white" font-weight="bold">库尔德宁</text>
-          <rect x="230" y="621" width="60" height="14" rx="7" fill="#E74C3C"/>
-          <text x="260" y="632" text-anchor="middle" font-size="9" fill="white">DAY7</text>
-        </g>
-        <!-- 那拉提 -->
+
+        <!-- 那拉提 DAY8-9 (左100) -->
         <g class="map-node" onclick="scrollToDay(8)" filter="url(#mShadow)">
-          <circle cx="120" cy="690" r="18" fill="#2980B9" stroke="white" stroke-width="3"/>
-          <text x="120" y="685" text-anchor="middle" font-size="14">🌄</text>
-          <text x="120" y="695" text-anchor="middle" font-size="10" fill="white" font-weight="bold">那拉提</text>
-          <rect x="88" y="712" width="64" height="17" rx="8" fill="#2980B9"/>
-          <text x="120" y="725" text-anchor="middle" font-size="10" fill="white" font-weight="bold">DAY8-9</text>
+          <circle cx="100" cy="575" r="20" fill="#2980B9" stroke="white" stroke-width="3"/>
+          <text x="100" y="569" text-anchor="middle" font-size="15">🌄</text>
+          <text x="100" y="580" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">那拉提</text>
+          <rect x="65" y="600" width="70" height="17" rx="8" fill="#2980B9"/>
+          <text x="100" y="613" text-anchor="middle" font-size="10" fill="white" font-weight="bold">DAY8-9</text>
         </g>
+
+        <!-- 伊宁 D10 (右260) -->
+        <g class="map-node" onclick="scrollToDay(10)" filter="url(#mShadow)">
+          <circle cx="260" cy="678" r="17" fill="#FF6B9D" stroke="white" stroke-width="2.5"/>
+          <text x="260" y="673" text-anchor="middle" font-size="14">🌸</text>
+          <text x="260" y="684" text-anchor="middle" font-size="9" fill="white" font-weight="bold">伊宁</text>
+          <rect x="228" y="700" width="64" height="15" rx="7" fill="#FF6B9D"/>
+          <text x="260" y="711" text-anchor="middle" font-size="9.5" fill="white">DAY10 购物</text>
+        </g>
+
+        <!-- 乌鲁木齐 D11 (左100) -->
+        <g class="map-node" onclick="scrollToDay(11)" filter="url(#mShadow)">
+          <circle cx="100" cy="775" r="17" fill="#52B788" stroke="white" stroke-width="2.5"/>
+          <text x="100" y="770" text-anchor="middle" font-size="14">🚄</text>
+          <text x="100" y="781" text-anchor="middle" font-size="9" fill="white" font-weight="bold">乌鲁木齐</text>
+          <rect x="65" y="797" width="70" height="15" rx="7" fill="#52B788"/>
+          <text x="100" y="808" text-anchor="middle" font-size="9.5" fill="white">DAY11 返程</text>
+        </g>
+
         <!-- 底部摘要 -->
-        <rect x="0" y="758" width="380" height="22" fill="rgba(255,255,255,0.6)"/>
-        <line x1="0" y1="758" x2="380" y2="758" stroke="#D5C4A0" stroke-width="1"/>
-        <text x="190" y="773" text-anchor="middle" font-size="8.5" fill="#7A5C4A">DAY1-2 乌鲁木齐 → DAY3 赛里木湖 → DAY4-5 伊宁 → DAY5 昭苏 → DAY6-7 夏塔 → DAY7 库尔德宁 → DAY8-9 那拉提</text>
+        <rect x="0" y="800" width="380" height="20" fill="rgba(255,255,255,0.6)"/>
+        <line x1="0" y1="800" x2="380" y2="800" stroke="#D5C4A0" stroke-width="1"/>
       </svg>
+    </div>
+  </div>
+
+  <!-- ===== WEATHER TABLE ===== -->
+  <div class="weather-section">
+    <div class="section-title">分地点精确天气预报</div>
+    <div style="overflow-x:auto;">
+      <table class="weather-table">
+        <thead>
+          <tr>
+            <th>日期</th>
+            <th>乌鲁木齐</th>
+            <th>伊宁</th>
+            <th>霍城</th>
+            <th>赛里木湖</th>
+            <th>那拉提</th>
+            <th>特克斯</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="date-col">6/11 周四</td>
+            <td>晴转多云 34/23</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/12 周五</td>
+            <td>雨 29/20</td>
+            <td>阴转雨 30/17</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/13 周六</td>
+            <td>—</td>
+            <td>阴转多云 29/15</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/14 周日</td>
+            <td>—</td>
+            <td>雨转晴 31/16</td>
+            <td>雨转晴 32/17</td>
+            <td>—</td><td>—</td><td>—</td>
+          </tr>
+          <tr class="golden-day">
+            <td class="date-col">6/15 周一★</td>
+            <td>—</td>
+            <td>晴 33/17</td>
+            <td>多云转晴 33/19</td>
+            <td>雨转多云 17/9</td>
+            <td>晴 32/16</td>
+            <td>晴 28/13</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/16 周二</td>
+            <td>—</td>
+            <td>阴转雨 37/18</td>
+            <td>—</td><td>—</td><td>—</td>
+            <td>阴 31/15</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/17 周三</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+            <td>雨转多云 27/12</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/18 周四</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
+            <td>雨转阴 35/18</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/19 周五</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
+            <td>雨 35/19</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/20 周六</td>
+            <td>—</td>
+            <td>晴转多云 36/20</td>
+            <td>—</td><td>—</td>
+            <td>降雨概率25%</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/21 周日</td>
+            <td>—</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="weather-note">
+      <strong>天气关键结论：</strong><br>
+      ★ <strong>6/15 全程黄金日</strong>：伊宁=晴，霍城=多云转晴，那拉提=晴，特克斯=晴<br>
+      ⚠️ 赛里木湖铁律：6/15 雨转多云是几乎唯一窗口，出发前3天再次确认预报<br>
+      🌺 霍城6/14 下午雨转晴 → 薰衣草最佳时机（雨后更鲜艳）<br>
+      数据来源：中国天气网 6/5 发布，10天以上预报仅供参考，出发前请刷新
     </div>
   </div>
 
@@ -828,9 +1007,9 @@
             <span class="day-toggle">▼</span>
           </div>
           <div class="day-summary">
-            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">🌧 乌鲁木齐 · 晴转小雨 22~29℃</span>
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">☀️ 乌鲁木齐 · 晴转多云 34/23℃</span>
             <span class="summary-tag">🛬 飞机抵达</span>
-            <span class="summary-tag">🕌 大巴扎</span>
+            <span class="summary-tag">🕌 国际大巴扎</span>
             <span class="summary-tag">🌙 二道桥夜市</span>
             <span class="summary-tag">🛏 乌鲁木齐</span>
           </div>
@@ -846,7 +1025,7 @@
               <span class="detail-icon">🕌</span>
               <div class="detail-content">
                 <strong>新疆国际大巴扎</strong><span class="cost-inline" style="margin-left:6px">免费入园</span><br>
-                <span>观光塔 30元/人（可选）。维吾尔族建筑风情，拱廊、手工艺品，适合拍照</span>
+                <span>观光塔 30元/人（可选）。维吾尔族建筑风情，适合拍照</span>
               </div>
             </div>
             <div class="detail-item">
@@ -866,7 +1045,7 @@
             <div class="detail-item">
               <span class="detail-icon">🛏</span>
               <div class="detail-content">
-                <strong>住宿</strong>：乌鲁木齐市区（如家/汉庭）<span class="cost-inline">130-160元/晚/间</span>，2间房
+                <strong>住宿</strong>：乌鲁木齐市区 <span class="cost-inline">130-160元/晚/间</span>
               </div>
             </div>
           </div>
@@ -874,51 +1053,58 @@
       </div>
 
       <!-- Day 2 -->
-      <div class="day-item color-orange" id="day-2">
+      <div class="day-item color-pink" id="day-2">
         <div class="day-dot"></div>
         <div class="day-card" onclick="toggleDay(this)">
           <div class="day-header">
             <span class="day-badge">第 2 天</span>
-            <span class="day-title">🏔 天山天池 · 夜间出发</span>
+            <span class="day-title">✈️ 乌鲁木齐→伊宁 · 城市风情</span>
             <span class="day-date">6月12日 周五</span>
             <span class="day-toggle">▼</span>
           </div>
           <div class="day-summary">
-            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">⛅ 乌鲁木齐 · 阴转多云 22~30℃</span>
-            <span class="summary-tag">🚌 直通车往返</span>
-            <span class="summary-tag">🏔 天山天池</span>
-            <span class="summary-tag">🌙 22:29夜车出发</span>
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">🌧 乌鲁木齐雨29/20 → 伊宁阴转雨30/17℃</span>
+            <span class="summary-tag">✈️ 飞机直飞1h15min</span>
+            <span class="summary-tag">🐴 喀赞其民俗区</span>
+            <span class="summary-tag">🌈 六星街</span>
+            <span class="summary-tag">🛏 伊宁</span>
           </div>
           <div class="day-detail">
             <div class="detail-item">
-              <span class="detail-icon">🚌</span>
+              <span class="detail-icon">✈️</span>
               <div class="detail-content">
-                <strong>景区直通车</strong> <span class="cost-inline">往返60元</span><br>
-                <span>人民公园/高铁站旁国际客运站，8:30-9:00出发。提前一天微信搜"天山行新疆公路客运"订票</span>
+                <strong>上午航班：乌鲁木齐 → 伊宁</strong> <span class="cost-inline">约290-400元/人</span><br>
+                <span>推荐早班机 CZ6821 08:35→10:00，飞行约1小时15分<br>
+                备选：白天高铁 C841 08:04→13:58（约99元一等座）</span>
               </div>
             </div>
             <div class="detail-item">
-              <span class="detail-icon">🎟</span>
+              <span class="detail-icon">🏘</span>
               <div class="detail-content">
-                <strong>天山天池门票</strong> <span class="cost-inline">95元</span> + <span class="cost-inline">区间车60元</span><br>
-                <span>全天游览：瑶池湖畔 · 定海神针 · 环湖栈道。时间充裕可乘马牙山索道（另收费）</span>
+                <strong>下午：喀赞其民俗旅游区</strong> <span class="cost-inline">免费</span><br>
+                <span>维吾尔族老宅 · 马车游览拍照（约80元/人）· 民族风情浓郁</span>
               </div>
             </div>
             <div class="detail-item">
-              <span class="detail-icon">🕔</span>
+              <span class="detail-icon">🌈</span>
               <div class="detail-content">
-                <strong>17:00 直通车返乌鲁木齐</strong><br>
-                <span>晚饭后收拾行李，前往乌鲁木齐站</span>
+                <strong>傍晚：六星街</strong><br>
+                <span>彩色房子 · 民族特色手工艺品 · 网红冰激凌店，适合拍照打卡</span>
               </div>
             </div>
             <div class="detail-item">
-              <span class="detail-icon">🚂</span>
+              <span class="detail-icon">🍽</span>
               <div class="detail-content">
-                <strong>5801次夜间火车</strong> <span class="cost-inline">硬卧约100元</span><br>
-                <span>22:29 乌鲁木齐出发 → 次日 06:40 博乐站抵达（<strong>当晚无需住宿</strong>）</span>
+                <strong>晚餐</strong>：纳仁（马肉+面 30元）· 薄皮包子 · 熏马肠 · 伊犁特色酸奶
               </div>
             </div>
-            <div class="detail-tip">⚠️ 提前在12306订火车票（硬卧/软卧）。打印或截图车票，方便夜间检票</div>
+            <div class="detail-item">
+              <span class="detail-icon">🛏</span>
+              <div class="detail-content">
+                <strong>住宿</strong>：伊宁市 <span class="cost-inline">100-130元/晚/间</span>
+              </div>
+            </div>
+            <div class="detail-tip">备注：去掉天山天池+夜火车，改为飞机直飞伊宁，省体力省时间</div>
           </div>
         </div>
       </div>
@@ -929,54 +1115,50 @@
         <div class="day-card" onclick="toggleDay(this)">
           <div class="day-header">
             <span class="day-badge">第 3 天</span>
-            <span class="day-title">💧 赛里木湖 · 一日游</span>
+            <span class="day-title">🏛 伊宁 · 城市深度游</span>
             <span class="day-date">6月13日 周六</span>
             <span class="day-toggle">▼</span>
           </div>
           <div class="day-summary">
-            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">🌧 伊宁 · 小雨转阴 19~35℃</span>
-            <span class="summary-tag">🚐 博乐专线拼车</span>
-            <span class="summary-tag">💧 赛里木湖</span>
-            <span class="summary-tag">🚌 直达伊宁</span>
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">⛅ 伊宁 · 阴转多云 29/15℃（不下雨）</span>
+            <span class="summary-tag">🏛 伊犁州博物馆</span>
+            <span class="summary-tag">🛒 汉人街巴扎</span>
+            <span class="summary-tag">🌅 伊犁河日落</span>
             <span class="summary-tag">🛏 伊宁</span>
           </div>
           <div class="day-detail">
             <div class="detail-item">
-              <span class="detail-icon">🚉</span>
+              <span class="detail-icon">🏛</span>
               <div class="detail-content">
-                <strong>06:40 抵达博乐站</strong><br>
-                <span>出站后找"赛里木湖专线"司机，<strong>认准9改7豪华商务车</strong> <span class="cost-inline">40元/人</span>。约8:00出发，9:10到达新东门游客中心</span>
+                <strong>上午：伊犁州博物馆</strong> <span class="cost-inline">免费</span><br>
+                <span>了解哈萨克/维吾尔/锡伯族文化，展品丰富，约2小时</span>
               </div>
             </div>
             <div class="detail-item">
-              <span class="detail-icon">🎟</span>
+              <span class="detail-icon">🛒</span>
               <div class="detail-content">
-                <strong>自助购票机购套票</strong> <span class="cost-inline">129元/人</span><br>
-                <span>含门票+区间车。行李可寄存 2元/小时</span>
+                <strong>中午：喀赞其深度游览 + 汉人街巴扎</strong><br>
+                <span>当地集市，买干果（核桃、葡萄干、巴旦木）带回家</span>
               </div>
             </div>
             <div class="detail-item">
-              <span class="detail-icon">🚌</span>
+              <span class="detail-icon">🌅</span>
               <div class="detail-content">
-                <strong>顺时针环湖路线</strong>（建议顺序）<br>
-                <span>三台古驿（湖水最蓝） → 松树头（爬山俯瞰 2.5小时） → 金花紫卉（人少景美） → 克勒涌珠（天鹅） → 亲水滩（风小）</span><br>
-                <span style="font-size:11px;color:#9B8C80">下载「车来了」App 可实时查看区间车位置</span>
+                <strong>傍晚：伊犁河大桥看日落</strong> <span class="cost-inline">免费</span><br>
+                <span>北京时间约22:00日落，河面倒影极美，6月光线绝佳</span>
               </div>
             </div>
             <div class="detail-item">
-              <span class="detail-icon">🕔</span>
+              <span class="detail-icon">🍽</span>
               <div class="detail-content">
-                <strong>17:00前回游客中心</strong><br>
-                <span>乘<strong>直达伊宁大巴</strong> <span class="cost-inline">49元/人</span>，约17:45发车，可能20:00-21:00抵达伊宁</span>
+                <strong>晚餐</strong>：大盘鸡 80元/份 · 新疆抓饭
               </div>
             </div>
             <div class="detail-item">
               <span class="detail-icon">🛏</span>
-              <div class="detail-content">
-                <strong>住宿</strong>：伊宁市（冈仁波齐青旅/格林豪泰）<span class="cost-inline">100-130元/晚/间</span>
-              </div>
+              <div class="detail-content"><strong>住宿</strong>：伊宁市</div>
             </div>
-            <div class="detail-tip">⚠️ 着装：T恤+单层冲锋衣。天气查 windy.com，多云即可出发。湖边风大，防晒必备</div>
+            <div class="detail-tip">备注：6/13 赛里木湖/那拉提/昭苏全下雨，只有伊宁阴转多云可以充分游览</div>
           </div>
         </div>
       </div>
@@ -987,49 +1169,50 @@
         <div class="day-card" onclick="toggleDay(this)">
           <div class="day-header">
             <span class="day-badge">第 4 天</span>
-            <span class="day-title">🏘 伊宁市区 · 民族风情</span>
+            <span class="day-title">💜 霍城薰衣草 · 雨后花海</span>
             <span class="day-date">6月14日 周日</span>
             <span class="day-toggle">▼</span>
           </div>
           <div class="day-summary">
-            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">☁️ 伊宁 · 阴 18~35℃</span>
-            <span class="summary-tag">🐴 喀赞其</span>
-            <span class="summary-tag">🌈 六星街</span>
-            <span class="summary-tag">🌅 伊犁河日落</span>
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">🌤 伊宁雨转晴31/16 / 霍城雨转晴32/17℃（下午放晴！）</span>
+            <span class="summary-tag">🚌 下午出发</span>
+            <span class="summary-tag">💜 薰衣草园</span>
+            <span class="summary-tag">🏯 惠远古城（可选）</span>
             <span class="summary-tag">🛏 伊宁</span>
           </div>
           <div class="day-detail">
             <div class="detail-item">
-              <span class="detail-icon">🏘</span>
+              <span class="detail-icon">🕐</span>
               <div class="detail-content">
-                <strong>上午：喀赞其民俗旅游区</strong> <span class="cost-inline">免费</span><br>
-                <span>维吾尔族老宅、马车游览拍照（骑马体验约80元/人）、民族风情浓郁</span>
+                <strong>下午出发（等上午雨停）</strong><br>
+                <span>伊宁→霍城薰衣草园约1.5小时。上午雨停后出发最佳</span>
               </div>
             </div>
             <div class="detail-item">
-              <span class="detail-icon">🌈</span>
+              <span class="detail-icon">🚌</span>
               <div class="detail-content">
-                <strong>下午：六星街</strong><br>
-                <span>彩色房子 · 民族特色手工艺品 · 网红冰激凌店，适合拍照打卡</span>
+                <strong>交通</strong>：伊宁客运站→霍城 <span class="cost-inline">大巴约20元/人</span>，或4人拼车约150元/车
               </div>
             </div>
             <div class="detail-item">
-              <span class="detail-icon">🌅</span>
+              <span class="detail-icon">💜</span>
               <div class="detail-content">
-                <strong>傍晚：伊犁河大桥看日落</strong> <span class="cost-inline">免费</span><br>
-                <span>新疆6月日落约北京时间22:00，河面倒影极美</span>
+                <strong>解忧公主薰衣草园</strong> <span class="cost-inline">门票约35元/人</span><br>
+                <span>6月中旬花期正好，雨后更鲜艳，最佳拍摄时机</span>
               </div>
             </div>
             <div class="detail-item">
-              <span class="detail-icon">🍽</span>
+              <span class="detail-icon">🏯</span>
               <div class="detail-content">
-                <strong>晚餐</strong>：纳仁（马肉+面 30元）· 薄皮包子 · 熏马肠
+                <strong>顺路可去：惠远古城</strong> <span class="cost-inline">门票约45元/人</span><br>
+                <span>伊犁将军府所在地，清代历史遗迹</span>
               </div>
             </div>
             <div class="detail-item">
               <span class="detail-icon">🛏</span>
-              <div class="detail-content"><strong>住宿</strong>：伊宁市</div>
+              <div class="detail-content"><strong>住宿</strong>：返回伊宁市</div>
             </div>
+            <div class="detail-tip">备选（全天大雨）：伊宁室内——锡伯族民俗风情园 · 手工体验</div>
           </div>
         </div>
       </div>
@@ -1040,41 +1223,59 @@
         <div class="day-card" onclick="toggleDay(this)">
           <div class="day-header">
             <span class="day-badge">第 5 天</span>
-            <span class="day-title">🌾 伊宁 → 昭苏 · 草原转场</span>
+            <span class="day-title">💧 赛里木湖 · 全程最关键一天</span>
             <span class="day-date">6月15日 周一</span>
             <span class="day-toggle">▼</span>
           </div>
           <div class="day-summary">
-            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">🌧 昭苏 · 小雨转晴 8~17℃</span>
-            <span class="summary-tag">🚌 大巴48元</span>
-            <span class="summary-tag">🌾 昭苏草原</span>
-            <span class="summary-tag">🛏 昭苏</span>
+            <span class="summary-tag" style="background:#FFF9C4;color:#7A5C00;border-color:#FFD54F;">★ 全程黄金日！</span>
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">🌤 赛里木湖 · 雨转多云 17/9℃（唯一窗口）</span>
+            <span class="summary-tag">🚐 包车约100元/人</span>
+            <span class="summary-tag">💧 赛里木湖套票129元</span>
+            <span class="summary-tag">🌉 果子沟大桥</span>
+            <span class="summary-tag">🛏 伊宁</span>
           </div>
           <div class="day-detail">
             <div class="detail-item">
+              <span class="detail-icon">🕖</span>
+              <div class="detail-content">
+                <strong>7:00 伊宁出发</strong><br>
+                <span>包车/拼车前往赛里木湖，约140km，2-2.5小时。4人包车约 <span class="cost-inline">400-500元/车</span>，人均100-125元</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🎟</span>
+              <div class="detail-content">
+                <strong>赛里木湖套票</strong> <span class="cost-inline">129元/人</span><br>
+                <span>含门票+区间车。行李可寄存 2元/小时</span>
+              </div>
+            </div>
+            <div class="detail-item">
               <span class="detail-icon">🚌</span>
               <div class="detail-content">
-                <strong>伊宁客运站 → 昭苏</strong> <span class="cost-inline">48元/人</span><br>
-                <span>约3.5-4小时路程，沿途伊犁河谷风光</span>
+                <strong>顺时针环湖路线</strong><br>
+                <span>三台古驿（水最蓝）→ 松树头（半山腰观景台）→ 金花紫卉（人少景美）→ 克勒涌珠（天鹅）→ 亲水滩</span><br>
+                <span style="font-size:11px;color:#9B8C80">下载「车来了」App 可实时查看区间车位置</span>
               </div>
             </div>
             <div class="detail-item">
-              <span class="detail-icon">🌾</span>
+              <span class="detail-icon">🌉</span>
               <div class="detail-content">
-                <strong>下午：昭苏草原自由漫步</strong> <span class="cost-inline">免费</span><br>
-                <span>广阔草原、天马故乡。6月草色最绿，马群奔跑可遇</span>
+                <strong>果子沟大桥</strong>（路上）<br>
+                <span>壮观工程景观，路过即看</span>
               </div>
             </div>
             <div class="detail-item">
-              <span class="detail-icon">🍽</span>
-              <div class="detail-content"><strong>晚餐</strong>：昭苏特色美食（手抓肉、烤全羊）</div>
+              <span class="detail-icon">🕔</span>
+              <div class="detail-content">
+                <strong>16:00-17:00 前返回</strong>，约19:00-20:00 回到伊宁
+              </div>
             </div>
             <div class="detail-item">
               <span class="detail-icon">🛏</span>
-              <div class="detail-content">
-                <strong>住宿</strong>：昭苏县城 <span class="cost-inline">100-130元/晚/间</span>
-              </div>
+              <div class="detail-content"><strong>住宿</strong>：伊宁市</div>
             </div>
+            <div class="detail-tip">⚠️ 赛里木湖铁律：6/15 是几乎唯一晴窗口，雨天去=灰色湖水白去。出发前3天再次确认天气！<br>备选方案：若当日仍大雨，改去那拉提（那拉提6/15=晴）</div>
           </div>
         </div>
       </div>
@@ -1085,38 +1286,35 @@
         <div class="day-card" onclick="toggleDay(this)">
           <div class="day-header">
             <span class="day-badge">第 6 天</span>
-            <span class="day-title">🏔 夏塔景区 · 雪山骑马</span>
+            <span class="day-title">☯ 伊宁→特克斯 · 八卦城</span>
             <span class="day-date">6月16日 周二</span>
             <span class="day-toggle">▼</span>
           </div>
           <div class="day-summary">
-            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">⛅ 特克斯 · 多云转阴 16~28℃</span>
-            <span class="summary-tag">🐴 雪山骑马</span>
-            <span class="summary-tag">🏔 冰川草甸</span>
-            <span class="summary-tag">🚐 包车特克斯</span>
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">☁️ 伊宁阴转雨37/18 / 特克斯阴31/15℃</span>
+            <span class="summary-tag">🚌 大巴40-50元</span>
+            <span class="summary-tag">☯ 特克斯八卦城</span>
             <span class="summary-tag">🛏 特克斯</span>
           </div>
           <div class="day-detail">
             <div class="detail-item">
-              <span class="detail-icon">🚐</span>
+              <span class="detail-icon">🚌</span>
               <div class="detail-content">
-                <strong>昭苏客运站 → 夏塔</strong> <span class="cost-inline">拼车25元/人</span><br>
-                <span>约1.5小时</span>
+                <strong>上午出发（趁伊宁还没下雨）</strong><br>
+                <span>伊宁→特克斯 <span class="cost-inline">大巴约40-50元/人</span>，约3-4小时</span>
               </div>
             </div>
             <div class="detail-item">
-              <span class="detail-icon">🎟</span>
+              <span class="detail-icon">☯</span>
               <div class="detail-content">
-                <strong>夏塔景区</strong> <span class="cost-inline">门票+区间车80元/人</span><br>
-                <span>将军桥 → 鲜花台骑马往返（约3小时，骑马费 150-200元/人）</span><br>
-                <span>雪山・冰川・草甸花海，景色壮观</span>
+                <strong>下午：特克斯八卦城</strong><br>
+                <span>易经文化园 · 离街民俗区 · 太极坛，全球唯一八卦形城市，无人机航拍全景</span>
               </div>
             </div>
             <div class="detail-item">
-              <span class="detail-icon">🚐</span>
+              <span class="detail-icon">🍽</span>
               <div class="detail-content">
-                <strong>夏塔 → 特克斯（包车）</strong> <span class="cost-inline">200元/车，4人均摊50元</span><br>
-                <span>约1.5小时（夏塔无公共交通）</span>
+                <strong>特克斯美食</strong>：手抓饭 · 馕坑肉 · 烤包子
               </div>
             </div>
             <div class="detail-item">
@@ -1125,7 +1323,6 @@
                 <strong>住宿</strong>：特克斯县城 <span class="cost-inline">100-130元/晚/间</span>
               </div>
             </div>
-            <div class="detail-tip">⚠️ 旺季门票紧张，提前1周在携程/美团预约！海拔约1900m，注意保暖</div>
           </div>
         </div>
       </div>
@@ -1136,43 +1333,37 @@
         <div class="day-card" onclick="toggleDay(this)">
           <div class="day-header">
             <span class="day-badge">第 7 天</span>
-            <span class="day-title">🌿 喀拉峻草原 · 世界遗产</span>
+            <span class="day-title">🌿 喀拉峻 · UNESCO世遗草原</span>
             <span class="day-date">6月17日 周三</span>
             <span class="day-toggle">▼</span>
           </div>
           <div class="day-summary">
-            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">🌧 特克斯 · 小雨 14~29℃</span>
-            <span class="summary-tag">🌿 喀拉峻徒步</span>
-            <span class="summary-tag">🐴 骑马</span>
-            <span class="summary-tag">🚐 包车来回</span>
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">🌦 特克斯 · 雨转多云 27/12℃（上午小雨，下午转好）</span>
+            <span class="summary-tag">🚐 包车45元/人</span>
+            <span class="summary-tag">🌿 喀拉峻轻松版</span>
             <span class="summary-tag">🛏 特克斯</span>
           </div>
           <div class="day-detail">
             <div class="detail-item">
               <span class="detail-icon">🚐</span>
               <div class="detail-content">
-                <strong>特克斯 → 喀拉峻（包车）</strong> <span class="cost-inline">约180元/车，4人均摊45元</span><br>
-                <span>约30公里，早出发可多游览</span>
+                <strong>A计划（天气尚可）：9:00 出发</strong><br>
+                <span>特克斯→喀拉峻 包车约 <span class="cost-inline">180元/车</span>（均摊45元/人），约30km</span>
               </div>
             </div>
             <div class="detail-item">
               <span class="detail-icon">🎟</span>
               <div class="detail-content">
-                <strong>喀拉峻草原</strong> <span class="cost-inline">门票110元+区间车30元=140元</span><br>
-                <span>UNESCO世遗草原。小环线徒步约8km，约4小时，花期绚丽</span>
-              </div>
-            </div>
-            <div class="detail-item">
-              <span class="detail-icon">🐴</span>
-              <div class="detail-content">
-                <strong>骑马体验</strong> <span class="cost-inline">约150元/小时</span><br>
-                <span>哈萨克牧民带领，俯瞰草原全景</span>
+                <strong>喀拉峻景区</strong> <span class="cost-inline">门票110元+区间车30元=140元</span><br>
+                <span>UNESCO世遗草原。<strong>轻松版</strong>：坐区间车到核心观景台，短途步行1-2小时（不必全程8km徒步）<br>
+                重点看：人体草原曲线 · 阔克苏大峡谷 · 九曲十八弯</span>
               </div>
             </div>
             <div class="detail-item">
               <span class="detail-icon">🛏</span>
               <div class="detail-content"><strong>住宿</strong>：特克斯县城</div>
             </div>
+            <div class="detail-tip">B计划（大雨）：特克斯深度游——离街+八卦城+美食体验，不额外消费</div>
           </div>
         </div>
       </div>
@@ -1183,12 +1374,12 @@
         <div class="day-card" onclick="toggleDay(this)">
           <div class="day-header">
             <span class="day-badge">第 8 天</span>
-            <span class="day-title">🌄 特克斯 → 那拉提 · 转场</span>
+            <span class="day-title">🌄 特克斯→那拉提 · 草原初探</span>
             <span class="day-date">6月18日 周四</span>
             <span class="day-toggle">▼</span>
           </div>
           <div class="day-summary">
-            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">🌧 那拉提 · 小雨转阴 15~29℃</span>
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">🌦 那拉提 · 雨转阴 35/18℃（下午转好）</span>
             <span class="summary-tag">🚌 大巴约50元</span>
             <span class="summary-tag">🌄 那拉提初览</span>
             <span class="summary-tag">🛏 那拉提镇</span>
@@ -1197,15 +1388,15 @@
             <div class="detail-item">
               <span class="detail-icon">🚌</span>
               <div class="detail-content">
-                <strong>特克斯 → 巩留 → 那拉提</strong> <span class="cost-inline">约50元/人</span><br>
-                <span>约2-3小时。在"伊犁州汽车客运总站"微信小程序提前订票</span>
+                <strong>上午：特克斯→那拉提</strong> <span class="cost-inline">约50元/人</span><br>
+                <span>经巩留中转，约2-3小时。在"伊犁州汽车客运总站"微信小程序提前订票</span>
               </div>
             </div>
             <div class="detail-item">
               <span class="detail-icon">🎟</span>
               <div class="detail-content">
                 <strong>下午：那拉提景区初览</strong> <span class="cost-inline">门票95元+区间车60元=155元</span><br>
-                <span>空中草原初探，镇内面包车往返景区门口约10元</span>
+                <span>空中草原初探，趁下午天气转好先看核心景点。镇内面包车往返景区门口约10元</span>
               </div>
             </div>
             <div class="detail-item">
@@ -1229,32 +1420,32 @@
             <span class="day-toggle">▼</span>
           </div>
           <div class="day-summary">
-            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">🌧 那拉提 · 小雨 16~28℃</span>
-            <span class="summary-tag">🌸 野花徒步</span>
-            <span class="summary-tag">🐴 哈萨克骑马</span>
-            <span class="summary-tag">🔥 篝火晚会</span>
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">🌧 那拉提 · 雨 35/19℃（草原小雨也美）</span>
+            <span class="summary-tag">🐴 骑马150元/h</span>
+            <span class="summary-tag">🌸 空中草原徒步</span>
+            <span class="summary-tag">🔥 牧民家访篝火</span>
             <span class="summary-tag">🛏 那拉提镇</span>
           </div>
           <div class="day-detail">
             <div class="detail-item">
-              <span class="detail-icon">🌸</span>
+              <span class="detail-icon">🐴</span>
               <div class="detail-content">
-                <strong>上午：空中草原徒步</strong><br>
-                <span>6月野花烂漫，蒲公英、野百合满山坡，绝佳摄影时机</span>
+                <strong>上午：骑马体验</strong> <span class="cost-inline">约150元/小时</span><br>
+                <span>小雨不影响（有雨衣），雨后草原更绿，哈萨克牧民带领纵马花海</span>
               </div>
             </div>
             <div class="detail-item">
-              <span class="detail-icon">🐴</span>
+              <span class="detail-icon">🌸</span>
               <div class="detail-content">
-                <strong>下午：哈萨克族骑马体验</strong> <span class="cost-inline">约150元/小时</span><br>
-                <span>牧民带领，在花海中纵马，体验游牧文化</span>
+                <strong>下午：空中草原深度徒步</strong><br>
+                <span>雨中草原别有风味，雾气缭绕如仙境；雨大则区间车观景</span>
               </div>
             </div>
             <div class="detail-item">
               <span class="detail-icon">🔥</span>
               <div class="detail-content">
                 <strong>晚上：牧民家访 + 篝火晚会</strong><br>
-                <span>手抓肉 · 马奶酒 · 奶疙瘩 · 冬不拉音乐，哈萨克族传统盛情款待</span>
+                <span>手抓肉 · 马奶酒 · 奶疙瘩 · 冬不拉音乐（有顶棚蒙古包）</span>
               </div>
             </div>
             <div class="detail-item">
@@ -1271,13 +1462,13 @@
         <div class="day-card" onclick="toggleDay(this)">
           <div class="day-header">
             <span class="day-badge">第 10 天</span>
-            <span class="day-title">🛍 那拉提 → 伊宁 · 购物告别</span>
+            <span class="day-title">🛍 那拉提→伊宁 · 购物告别</span>
             <span class="day-date">6月20日 周六</span>
             <span class="day-toggle">▼</span>
           </div>
           <div class="day-summary">
-            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">⛅ 伊宁 · 多云 17~31℃</span>
-            <span class="summary-tag">🚌 大巴75元</span>
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">⛅ 那拉提降雨概率25%（全程最低）/ 伊宁晴转多云36/20℃</span>
+            <span class="summary-tag">🚌 大巴75元 09:00发</span>
             <span class="summary-tag">🛍 购买特产</span>
             <span class="summary-tag">🍽 告别晚餐</span>
             <span class="summary-tag">🛏 伊宁</span>
@@ -1287,7 +1478,7 @@
               <span class="detail-icon">🚌</span>
               <div class="detail-content">
                 <strong>那拉提客运站 → 伊宁</strong> <span class="cost-inline">75元/人</span><br>
-                <span>09:00 发车，约4小时</span>
+                <span>09:00 发车，约4小时抵达</span>
               </div>
             </div>
             <div class="detail-item">
@@ -1295,6 +1486,12 @@
               <div class="detail-content">
                 <strong>下午：伊宁购特产</strong><br>
                 <span>熏马肠 · 薰衣草精油 · 干果（核桃、葡萄干）· 巴旦木 · 沙棘汁</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🌅</span>
+              <div class="detail-content">
+                <strong>傍晚（如天晴）</strong>：伊犁河大桥告别日落
               </div>
             </div>
             <div class="detail-item">
@@ -1319,38 +1516,32 @@
         <div class="day-card" onclick="toggleDay(this)">
           <div class="day-header">
             <span class="day-badge">第 11 天</span>
-            <span class="day-title">✈️ 伊宁 → 乌鲁木齐 · 踏上归途</span>
+            <span class="day-title">🚄 伊宁→乌鲁木齐 · 踏上归途</span>
             <span class="day-date">6月21日 周日</span>
             <span class="day-toggle">▼</span>
           </div>
           <div class="day-summary">
-            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">⛅ 伊宁 · 多云 17~31℃</span>
-            <span class="summary-tag">🚕 打车至机场</span>
-            <span class="summary-tag">✈️ 伊宁飞乌鲁木齐</span>
-            <span class="summary-tag">🏁 行程结束</span>
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">— 伊宁出发</span>
+            <span class="summary-tag">🚄 白天高铁约6小时</span>
+            <span class="summary-tag">🏁 11天旅程结束</span>
           </div>
           <div class="day-detail">
             <div class="detail-item">
-              <span class="detail-icon">🚕</span>
+              <span class="detail-icon">🚄</span>
               <div class="detail-content">
-                <strong>早晨：打车至伊宁机场</strong> <span class="cost-inline">约40元</span><br>
-                <span>约30分钟路程，提前1小时到达</span>
-              </div>
-            </div>
-            <div class="detail-item">
-              <span class="detail-icon">✈️</span>
-              <div class="detail-content">
-                <strong>伊宁（YIN）→ 乌鲁木齐（URC）</strong> <span class="cost-inline">200-400元/人</span><br>
-                <span>推荐09:00-11:00航班，约40-45分钟。建议提前在飞猪/携程抢早鸟票</span>
+                <strong>白天高铁：伊宁→乌鲁木齐</strong> <span class="cost-inline">一等座约99元 / 二等座约65元</span><br>
+                <span>C843等车次，约6小时。推荐早班次，约14:00-15:00抵达乌鲁木齐站<br>
+                在12306提前购票，节假日人多早买</span>
               </div>
             </div>
             <div class="detail-item">
               <span class="detail-icon">🏁</span>
               <div class="detail-content">
                 <strong>抵达乌鲁木齐，转乘回程</strong><br>
-                <span>如有余程可在乌鲁木齐地窝堡机场候机，11天北疆之旅圆满结束！</span>
+                <span>转回程航班/火车，11天北疆之旅圆满结束！</span>
               </div>
             </div>
+            <div class="detail-tip green">✅ 回程记得提前购票，伊宁→乌鲁木齐高铁出发前1周以上购买</div>
           </div>
         </div>
       </div>
@@ -1363,77 +1554,120 @@
     <div class="section-title">必吃美食</div>
     <div class="food-grid">
       <div class="food-group">
-        <div class="food-group-title">🏙 乌鲁木齐</div>
+        <div class="food-group-title">🏙 乌鲁木齐/伊宁</div>
         <div class="food-item">烤羊肉串（5元/串）</div>
         <div class="food-item">烤包子（3元/个）</div>
-        <div class="food-item">大盘鸡（70元/份）</div>
+        <div class="food-item">大盘鸡（70-80元/份）</div>
         <div class="food-item">抓饭（20元/份）</div>
-        <div class="food-item">馕坑肉</div>
+        <div class="food-item">纳仁（马肉+面 30元）</div>
       </div>
       <div class="food-group">
-        <div class="food-group-title">🌿 伊宁</div>
-        <div class="food-item">纳仁（马肉+面 30元）</div>
+        <div class="food-group-title">🌿 伊宁特色</div>
         <div class="food-item">薄皮包子</div>
         <div class="food-item">熏马肠</div>
         <div class="food-item">伊犁特色酸奶</div>
-        <div class="food-item">大盘鸡（80元/份）</div>
+        <div class="food-item">馕坑肉</div>
+        <div class="food-item">熏马肠（特产带回）</div>
       </div>
       <div class="food-group">
         <div class="food-group-title">🌸 草原地区</div>
         <div class="food-item">手抓肉（整只羊腿）</div>
         <div class="food-item">马奶酒（哈萨克牧民）</div>
         <div class="food-item">奶疙瘩（乳酪）</div>
-        <div class="food-item">烤全羊（预约）</div>
-        <div class="food-item">昭苏特色美食</div>
+        <div class="food-item">烤全羊（提前预约）</div>
+        <div class="food-item">那拉提篝火手抓肉</div>
       </div>
     </div>
   </div>
 
   <!-- ===== TIPS SECTION ===== -->
   <div class="tips-section">
-    <div class="section-title" style="color: var(--blue);">6月出行特别提示</div>
+    <div class="section-title" style="color: var(--blue);">出行必备提示</div>
     <div class="tips-grid">
-      <div class="tip-item"><span class="tip-icon">🌸</span><span>那拉提6月野花盛开，蒲公英、野百合遍地，最佳拍摄季节</span></div>
-      <div class="tip-item"><span class="tip-icon">💧</span><span>赛里木湖6月水位最高，湖面最蓝最清澈</span></div>
-      <div class="tip-item"><span class="tip-icon">🎟</span><span>夏塔旺季门票紧张，提前1周在携程/美团预约</span></div>
-      <div class="tip-item"><span class="tip-icon">🌞</span><span>新疆6月日落约北京时间22:00，游览时间充裕</span></div>
-      <div class="tip-item"><span class="tip-icon">🧴</span><span>海拔高紫外线强，防晒霜SPF50+、帽子、太阳镜必备</span></div>
-      <div class="tip-item"><span class="tip-icon">⛰</span><span>那拉提约1800-2200m，赛里木湖约2073m，基本无明显高反</span></div>
+      <div class="tip-item"><span class="tip-icon">⚠️</span><span><strong>赛里木湖铁律</strong>：6/15 是几乎唯一窗口，出发前3天（6/12）再次确认天气预报</span></div>
+      <div class="tip-item"><span class="tip-icon">🧴</span><span>防晒必备：SPF50+防晒霜+帽子+太阳镜（海拔高紫外线强）</span></div>
+      <div class="tip-item"><span class="tip-icon">🧥</span><span>保暖衣物：赛里木湖海拔2073m，白天最高仅17℃，带冲锋衣/厚外套</span></div>
       <div class="tip-item"><span class="tip-icon">⏰</span><span>新疆实际时间比北京时间慢约2小时，安排行程需注意</span></div>
-      <div class="tip-item"><span class="tip-icon">📱</span><span>下载：12306（火车票）、车来了（区间车）、飞猪（机票）</span></div>
+      <div class="tip-item"><span class="tip-icon">🌅</span><span>6月新疆日落约北京时间22:00，游览时间充裕，不必赶时间</span></div>
+      <div class="tip-item"><span class="tip-icon">📱</span><span>下载APP：12306、飞猪、车来了、Windy.com（天气）</span></div>
+      <div class="tip-item"><span class="tip-icon">🎟</span><span>提前订票：乌鲁木齐→伊宁机票、伊宁→乌鲁木齐火车票提前1周以上购买</span></div>
+      <div class="tip-item"><span class="tip-icon">📅</span><span>出发前1天：买好伊宁→那拉提、那拉提→伊宁大巴票</span></div>
+    </div>
+  </div>
+
+  <!-- ===== DECISION TABLE ===== -->
+  <div class="decision-section">
+    <div class="section-title">关键决策时间表</div>
+    <div class="decision-list">
+      <div class="decision-item">
+        <span class="decision-date">6/8（出发前3天）</span>
+        <span>再次确认 6/15 赛里木湖天气预报——<strong>全程最关键决策点</strong>。若仍大雨，当天改去那拉提</span>
+      </div>
+      <div class="decision-item">
+        <span class="decision-date">出发前1周</span>
+        <span>抢乌鲁木齐→伊宁去程机票 · 买伊宁→乌鲁木齐回程高铁票</span>
+      </div>
+      <div class="decision-item">
+        <span class="decision-date">出发前1天</span>
+        <span>买好伊宁→那拉提、那拉提→伊宁大巴票</span>
+      </div>
+      <div class="decision-item">
+        <span class="decision-date">每天早上</span>
+        <span>查 Windy.com / 中国天气网，决定当天 A/B 计划</span>
+      </div>
+      <div class="decision-item">
+        <span class="decision-date">6/14 中午</span>
+        <span>判断霍城是否下午放晴，决定是否去薰衣草园</span>
+      </div>
+      <div class="decision-item">
+        <span class="decision-date">6/17 早上</span>
+        <span>判断喀拉峻是否可去，否则在特克斯城内深度游</span>
+      </div>
     </div>
   </div>
 
   <!-- ===== COST OVERVIEW ===== -->
-  <div class="cost-overview">
+  <div class="cost-overview" style="margin-top:24px;">
     <div class="cost-card">
       <div class="icon">✈️</div>
-      <div class="label">交通费（人均）</div>
-      <div class="amount">~780元</div>
-      <div class="unit">含往返机票</div>
+      <div class="label">来程大交通</div>
+      <div class="amount">~300元</div>
+      <div class="unit">出发地→乌鲁木齐</div>
+    </div>
+    <div class="cost-card">
+      <div class="icon">🛫</div>
+      <div class="label">乌鲁木齐→伊宁</div>
+      <div class="amount">~350元</div>
+      <div class="unit">单程去程机票</div>
+    </div>
+    <div class="cost-card">
+      <div class="icon">🚄</div>
+      <div class="label">伊宁→乌鲁木齐</div>
+      <div class="amount">~99元</div>
+      <div class="unit">白天高铁~6小时</div>
     </div>
     <div class="cost-card">
       <div class="icon">🏨</div>
-      <div class="label">住宿费（人均）</div>
-      <div class="amount">~553元</div>
-      <div class="unit">9晚 2人间</div>
+      <div class="label">住宿9晚</div>
+      <div class="amount">~500元</div>
+      <div class="unit">2人间均摊</div>
     </div>
     <div class="cost-card">
       <div class="icon">🎟</div>
-      <div class="label">景点门票（人均）</div>
-      <div class="amount">~784元</div>
-      <div class="unit">全程票价合计</div>
+      <div class="label">景点交通</div>
+      <div class="amount">~575元</div>
+      <div class="unit">赛里木湖+薰衣草+那拉提+喀拉峻</div>
     </div>
     <div class="cost-card">
       <div class="icon">🍽</div>
-      <div class="label">餐饮（人均）</div>
+      <div class="label">餐饮</div>
       <div class="amount">~500元</div>
       <div class="unit">含特色美食</div>
     </div>
     <div class="cost-card">
       <div class="icon">💰</div>
       <div class="label">人均总费用</div>
-      <div class="amount">~2,617元</div>
+      <div class="amount">~2,524元</div>
       <div class="unit">不含个人消费</div>
     </div>
   </div>
@@ -1441,9 +1675,10 @@
 </div><!-- /.container -->
 
 <div class="footer">
-  新疆北疆11天路书 · 6.11-6.21 · 4人公共交通版<br>
-  数据来源：小红书实地攻略 + 景区官方票价<br>
-  <span style="color: var(--orange);">⚠️ 价格仅供参考，以实际购票为准</span>
+  新疆北疆11天路书（优化版） · 6.11-6.21 · 4人公共交通版<br>
+  路线：乌鲁木齐 ✈→ 伊宁 → 霍城 → 赛里木湖 → 伊宁 → 特克斯 → 那拉提 → 伊宁 🚄→ 乌鲁木齐<br>
+  数据来源：中国天气网+AccuWeather实地预测，价格仅供参考，以实际购票为准<br>
+  <span style="color: var(--orange);">⚠️ 出发前3天务必刷新天气预报，尤其是6/15赛里木湖</span>
 </div>
 
 <script>
@@ -1455,12 +1690,10 @@
     const el = document.getElementById('day-' + dayNum);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      // Auto-open the card
       const card = el.querySelector('.day-card');
       if (card && !card.classList.contains('open')) {
         card.classList.add('open');
       }
-      // Highlight briefly
       el.style.transition = 'opacity 0.3s';
       el.style.opacity = '0.4';
       setTimeout(() => { el.style.opacity = '1'; }, 300);
