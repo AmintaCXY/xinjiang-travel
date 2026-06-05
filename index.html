@@ -197,8 +197,21 @@
   }
 
   .weather-table tr:nth-child(even) td { background: #FAFAF5; }
-  .weather-table .golden-day td { background: #FFF9C4 !important; font-weight: bold; color: #7A5C00; }
   .weather-table .date-col { font-weight: bold; color: var(--text); background: var(--sand) !important; }
+  .weather-table td.hl-today {
+    background: #FFF9C4 !important;
+    font-weight: bold;
+    color: #7A5C00;
+    border-left: 2px solid #FFD54F;
+    border-right: 2px solid #FFD54F;
+  }
+  .weather-table td.hl-golden {
+    background: #E8F5E9 !important;
+    font-weight: bold;
+    color: #1B5E20;
+    border-left: 2px solid #66BB6A;
+    border-right: 2px solid #66BB6A;
+  }
   .weather-note {
     font-size: 11px;
     color: var(--text-light);
@@ -909,99 +922,110 @@
           </tr>
         </thead>
         <tbody>
+          <!-- D1: 乌鲁木齐 -->
           <tr>
-            <td class="date-col">6/11 周四</td>
-            <td>☀️→☁️ 晴转多云 34/23</td>
+            <td class="date-col">6/11 周四 D1</td>
+            <td class="hl-today">☀️→☁️ 晴转多云 34/23</td>
             <td>🌧 小雨 30/18</td>
             <td>🌧 小雨 29/17</td>
             <td>☁️→🌧 阴转小雨 17/9</td>
             <td>🌧 小雨 31/18</td>
             <td>🌧 小雨 27/14</td>
           </tr>
+          <!-- D2: 乌鲁木齐→伊宁 -->
           <tr>
-            <td class="date-col">6/12 周五</td>
-            <td>🌧 雨 29/20</td>
-            <td>☁️→🌧 阴转雨 30/17</td>
+            <td class="date-col">6/12 周五 D2</td>
+            <td class="hl-today">🌧 雨 29/20</td>
+            <td class="hl-today">☁️→🌧 阴转雨 30/17</td>
             <td>🌧 雨 31/18</td>
             <td>🌧 雨 17/8</td>
             <td>🌧 雨 28/18</td>
             <td>🌧 雨 25/14</td>
           </tr>
+          <!-- D3: 伊宁 -->
           <tr>
-            <td class="date-col">6/13 周六</td>
+            <td class="date-col">6/13 周六 D3</td>
             <td>☁️ 阴 27/18</td>
-            <td>☁️→⛅ 阴转多云 29/15</td>
+            <td class="hl-today">☁️→⛅ 阴转多云 29/15</td>
             <td>🌧 雨 29/16</td>
             <td>🌧 雨 15/6</td>
             <td>🌧 雨 27/14</td>
             <td>🌧 雨 24/11</td>
           </tr>
+          <!-- D4: 伊宁→霍城 -->
           <tr>
-            <td class="date-col">6/14 周日</td>
+            <td class="date-col">6/14 周日 D4</td>
             <td>🌦 雨转阴 26/15</td>
-            <td>🌦→☀️ 雨转晴 31/16</td>
-            <td>🌦→☀️ 雨转晴 32/17</td>
+            <td class="hl-today">🌦→☀️ 雨转晴 31/16</td>
+            <td class="hl-today">🌦→☀️ 雨转晴 32/17</td>
             <td>🌧 雨 15/7</td>
             <td>🌧 雨 29/14</td>
             <td>⛅ 多云 26/12</td>
           </tr>
-          <tr class="golden-day">
-            <td class="date-col">6/15 周一★</td>
+          <!-- D5: 赛里木湖（黄金日） -->
+          <tr>
+            <td class="date-col">6/15 周一★ D5</td>
             <td>☀️→⛅ 晴转多云 27/17</td>
             <td>☀️ 晴 33/17</td>
             <td>⛅→☀️ 多云转晴 33/19</td>
-            <td>🌦→⛅ 雨转多云 17/9</td>
+            <td class="hl-golden">🌦→⛅ 雨转多云 17/9</td>
             <td>☀️ 晴 32/16</td>
             <td>☀️ 晴 28/13</td>
           </tr>
+          <!-- D6: 伊宁→特克斯 -->
           <tr>
-            <td class="date-col">6/16 周二</td>
+            <td class="date-col">6/16 周二 D6</td>
             <td>☀️→☁️ 晴转阴 30/20</td>
             <td>☁️→🌧 阴转雨 37/18</td>
             <td>⛅→☁️ 多云转阴 36/20</td>
             <td>🌧 雨 21/10</td>
             <td>⛅→🌧 多云转雨 35/18</td>
-            <td>☁️ 阴 31/15</td>
+            <td class="hl-today">☁️ 阴 31/15</td>
           </tr>
+          <!-- D7: 特克斯/喀拉峻 -->
           <tr>
-            <td class="date-col">6/17 周三</td>
+            <td class="date-col">6/17 周三 D7</td>
             <td>☁️→🌧 阴转雨 30/18</td>
             <td>☁️→🌧 阴转雨 37/17</td>
             <td>🌧 雨 37/18</td>
             <td>🌧 雨 21/9</td>
             <td>🌧 雨 35/15</td>
-            <td>🌦→⛅ 雨转多云 27/12</td>
+            <td class="hl-today">🌦→⛅ 雨转多云 27/12</td>
           </tr>
+          <!-- D8: 特克斯→那拉提 -->
           <tr>
-            <td class="date-col">6/18 周四</td>
+            <td class="date-col">6/18 周四 D8</td>
             <td>🌦→⛅ 雨转多云 31/21</td>
             <td>☀️→☁️ 晴转阴 36/18</td>
             <td>🌧 雨 35/19</td>
             <td>🌧 雨 20/9</td>
-            <td>🌦→☁️ 雨转阴 35/18</td>
+            <td class="hl-today">🌦→☁️ 雨转阴 35/18</td>
             <td>⛅→🌧 多云转雨 30/14</td>
           </tr>
+          <!-- D9: 那拉提 -->
           <tr>
-            <td class="date-col">6/19 周五</td>
+            <td class="date-col">6/19 周五 D9</td>
             <td>☁️ 阴 33/21</td>
             <td>☀️→⛅ 晴转多云 36/20</td>
             <td>🌦→⛅ 雨转多云 36/21</td>
             <td>🌧 雨 21/12</td>
-            <td>🌧 雨 35/19</td>
+            <td class="hl-today">🌧 雨 35/19</td>
             <td>🌧 雨 32/14</td>
           </tr>
+          <!-- D10: 那拉提→伊宁 -->
           <tr>
-            <td class="date-col">6/20 周六</td>
+            <td class="date-col">6/20 周六 D10</td>
             <td>—</td>
-            <td>☀️→⛅ 晴转多云 36/20</td>
+            <td class="hl-today">☀️→⛅ 晴转多云 36/20</td>
             <td>—</td><td>—</td>
-            <td>🌂 降雨概率25%（全程最低）</td>
+            <td class="hl-today">🌂 降雨概率25%（最低）</td>
             <td>—</td>
           </tr>
+          <!-- D11: 伊宁→乌鲁木齐 -->
           <tr>
-            <td class="date-col">6/21 周日</td>
+            <td class="date-col">6/21 周日 D11</td>
             <td>—</td>
-            <td>🚄 出发返程</td>
+            <td class="hl-today">🚄 出发返程</td>
             <td>—</td><td>—</td><td>—</td><td>—</td>
           </tr>
         </tbody>
