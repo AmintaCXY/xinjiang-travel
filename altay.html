@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新疆北疆11天路书 · 阿勒泰深度版 | 6.11-6.21</title>
+
+<style>
+  :root {
+    --sand: #FBF5E6;
+    --sand-dark: #F0E6CC;
+    --pink: #FF7BAC;
+    --pink-light: #FFD6E7;
+    --orange: #FF9544;
+    --orange-light: #FFE5CC;
+    --green: #5CB85C;
+    --green-light: #D6F0D6;
+    --blue: #4AABDB;
+    --blue-light: #CCE9F5;
+    --purple: #9B59B6;
+    --purple-light: #EAD6F5;
+    --text: #3D2B1F;
+    --text-light: #7A5C4A;
+    --border: #E8D5B7;
+    --shadow: rgba(0,0,0,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--sand);
+    color: var(--text);
+    font-family: 'PingFang SC', 'Hiragino Sans GB', 'STHeiti', 'Microsoft YaHei', '微软雅黑', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    background: linear-gradient(135deg, #FF9544 0%, #FF7BAC 50%, #9B59B6 100%);
+    padding: 40px 20px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .header-title {
+    font-family: 'PingFang SC', 'Hiragino Sans GB', 'STHeiti', 'Microsoft YaHei', sans-serif;
+    font-weight: bold;
+    font-size: clamp(28px, 6vw, 52px);
+    color: white;
+    text-shadow: 2px 3px 6px rgba(0,0,0,0.25);
+    letter-spacing: 4px;
+    line-height: 1.2;
+  }
+
+  .header-subtitle {
+    font-size: clamp(12px, 2.5vw, 16px);
+    color: rgba(255,255,255,0.92);
+    margin-top: 10px;
+    letter-spacing: 2px;
+  }
+
+  .header-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .header-tag {
+    background: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.5);
+    color: white;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ===== MAIN CONTAINER ===== */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 16px 60px;
+  }
+
+  /* ===== SVG MAP SECTION ===== */
+  .map-section {
+    background: white;
+    border-radius: 20px;
+    margin: 24px 0;
+    padding: 20px;
+    box-shadow: 0 4px 20px var(--shadow);
+    border: 2px solid var(--border);
+  }
+
+  .section-title {
+    font-family: 'PingFang SC', 'Hiragino Sans GB', 'STHeiti', 'Microsoft YaHei', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    color: var(--text);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 24px;
+    background: linear-gradient(to bottom, var(--orange), var(--pink));
+    border-radius: 3px;
+  }
+
+  .map-wrap {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .map-wrap svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (min-width: 601px) {
+    .map-desktop { display: block; }
+    .map-mobile { display: none; }
+  }
+
+  /* ===== COST OVERVIEW ===== */
+  .cost-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin: 16px 0;
+  }
+
+  .cost-card {
+    background: white;
+    border-radius: 12px;
+    padding: 12px 10px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+
+  .cost-card .icon { font-size: 20px; margin-bottom: 4px; }
+  .cost-card .label { font-size: 11px; color: var(--text-light); margin-bottom: 2px; }
+  .cost-card .amount { font-size: 16px; font-weight: bold; color: var(--orange); }
+  .cost-card .unit { font-size: 10px; color: var(--text-light); }
+
+  /* ===== WEATHER TABLE SECTION ===== */
+  .weather-section {
+    background: white;
+    border-radius: 20px;
+    margin: 24px 0 0;
+    padding: 20px;
+    box-shadow: 0 4px 20px var(--shadow);
+    border: 2px solid var(--border);
+    overflow-x: auto;
+  }
+
+  .weather-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    min-width: 600px;
+  }
+
+  .weather-table th {
+    background: var(--sand-dark);
+    color: var(--text);
+    padding: 7px 8px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid var(--border);
+  }
+
+  .weather-table td {
+    padding: 6px 8px;
+    text-align: center;
+    border: 1px solid var(--border);
+    color: var(--text-light);
+    white-space: nowrap;
+  }
+
+  .weather-table tr:nth-child(even) td { background: #FAFAF5; }
+  .weather-table .date-col { font-weight: bold; color: var(--text); background: var(--sand) !important; }
+  .weather-table td.hl-today {
+    background: #FFF9C4 !important;
+    font-weight: bold;
+    color: #7A5C00;
+    border-left: 2px solid #FFD54F;
+    border-right: 2px solid #FFD54F;
+  }
+  .weather-table td.hl-golden {
+    background: #E8F5E9 !important;
+    font-weight: bold;
+    color: #1B5E20;
+    border-left: 2px solid #66BB6A;
+    border-right: 2px solid #66BB6A;
+  }
+  .weather-note {
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 10px;
+    line-height: 1.8;
+  }
+  .weather-note strong { color: var(--orange); }
+
+  /* ===== VERTICAL DAY NAV ===== */
+  .vday-nav {
+    position: sticky;
+    top: 20px;
+    float: left;
+    width: 60px;
+    margin-left: -68px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    pointer-events: auto;
+    height: calc(90vh - 40px);
+    max-height: 810px;
+  }
+
+  .vday-nav-node {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+  }
+  /* 有连线的节点让 line 撑开 */
+  .vday-nav-node:not(:last-child) {
+    flex: 1 1 0;
+  }
+
+  .vday-nav-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2.5px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    z-index: 2;
+    background: #ccc;
+  }
+
+  .vday-nav-node:hover .vday-nav-dot {
+    transform: scale(1.2);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.22);
+  }
+
+  .vday-nav-node.active .vday-nav-dot {
+    transform: scale(1.25);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+    border-width: 3px;
+  }
+
+  .vday-nav-line {
+    width: 3px;
+    flex: 1 1 0;
+    min-height: 8px;
+    background: var(--border);
+    transition: background 0.3s;
+  }
+
+  .vday-nav-tooltip {
+    position: absolute;
+    left: 36px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.97);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 3px 9px;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--text);
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s;
+    z-index: 200;
+  }
+
+  .vday-nav-node:hover .vday-nav-tooltip,
+  .vday-nav-node.active .vday-nav-tooltip {
+    opacity: 1;
+  }
+
+  /* node colors */
+  .vday-nav-node.color-orange .vday-nav-dot { background: var(--orange); }
+  .vday-nav-node.color-pink   .vday-nav-dot { background: var(--pink); }
+  .vday-nav-node.color-green  .vday-nav-dot { background: var(--green); }
+  .vday-nav-node.color-blue   .vday-nav-dot { background: var(--blue); }
+  .vday-nav-node.color-purple .vday-nav-dot { background: var(--purple); }
+
+  .vday-nav-node.color-orange .vday-nav-line { background: var(--orange); opacity: 0.4; }
+  .vday-nav-node.color-pink   .vday-nav-line { background: var(--pink);   opacity: 0.4; }
+  .vday-nav-node.color-green  .vday-nav-line { background: var(--green);  opacity: 0.4; }
+  .vday-nav-node.color-blue   .vday-nav-line { background: var(--blue);   opacity: 0.4; }
+  .vday-nav-node.color-purple .vday-nav-line { background: var(--purple); opacity: 0.4; }
+
+  @media (max-width: 600px) {
+    .vday-nav {
+      width: 44px;
+      margin-left: -50px;
+      height: calc(90vh - 40px);
+      max-height: 720px;
+    }
+    .vday-nav-dot { width: 22px; height: 22px; font-size: 7.5px; }
+    .vday-nav-line { min-height: 6px; }
+    .vday-nav-tooltip { display: none; }
+  }
+
+  /* ===== TIMELINE ===== */
+  .timeline-section {
+    margin-top: 24px;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 68px;
+  }
+
+  .day-item {
+    position: relative;
+    margin-bottom: 16px;
+  }
+
+  .day-dot { display: none; }
+
+  .day-card {
+    background: white;
+    border-radius: 16px;
+    border: 2px solid var(--border);
+    box-shadow: 0 2px 12px var(--shadow);
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .day-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    transform: translateX(4px);
+  }
+
+  .day-header {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    gap: 12px;
+    user-select: none;
+  }
+
+  .day-badge {
+    flex-shrink: 0;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .day-title {
+    flex: 1;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--text);
+  }
+
+  .day-date {
+    font-size: 11px;
+    color: var(--text-light);
+    white-space: nowrap;
+  }
+
+  .day-toggle {
+    font-size: 18px;
+    color: var(--text-light);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+
+  .day-card.open .day-toggle { transform: rotate(180deg); }
+
+  .day-summary {
+    padding: 0 16px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .summary-tag {
+    font-size: 11px;
+    background: var(--sand);
+    border-radius: 10px;
+    padding: 3px 10px;
+    color: var(--text-light);
+    border: 1px solid var(--border);
+  }
+
+  .day-detail {
+    display: none;
+    padding: 0 16px 16px;
+    border-top: 1px dashed var(--border);
+  }
+
+  .day-card.open .day-detail { display: block; }
+
+  .detail-item {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--sand-dark);
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .detail-item:last-child { border-bottom: none; }
+
+  .detail-icon {
+    flex-shrink: 0;
+    font-size: 16px;
+    padding-top: 1px;
+  }
+
+  .detail-content { flex: 1; }
+  .detail-content strong { color: var(--text); }
+  .detail-content span { color: var(--text-light); }
+
+  .detail-tip {
+    background: #FFF8E1;
+    border-left: 3px solid var(--orange);
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 0 8px 8px 0;
+    font-size: 12.5px;
+    color: #7A5C00;
+  }
+
+  .detail-tip.green {
+    background: #F1F8E9;
+    border-left-color: var(--green);
+    color: #2D6E2D;
+  }
+
+  .cost-inline {
+    display: inline-block;
+    background: var(--orange-light);
+    color: #B35A00;
+    border-radius: 6px;
+    padding: 1px 7px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  /* ===== FOOD SECTION ===== */
+  .food-section {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 24px;
+    box-shadow: 0 4px 20px var(--shadow);
+    border: 2px solid var(--border);
+  }
+
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  .food-group {
+    background: var(--sand);
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px solid var(--border);
+  }
+
+  .food-group-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--orange);
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  .food-item {
+    font-size: 13px;
+    color: var(--text-light);
+    padding: 3px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .food-item::before {
+    content: '◆';
+    font-size: 8px;
+    color: var(--pink);
+    flex-shrink: 0;
+  }
+
+  /* ===== TIPS SECTION ===== */
+  .tips-section {
+    background: linear-gradient(135deg, #E8F8FF 0%, #F0FFE8 100%);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 24px;
+    border: 2px solid var(--blue-light);
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .tip-item {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  .tip-icon { font-size: 18px; flex-shrink: 0; }
+
+  /* ===== DECISION TABLE ===== */
+  .decision-section {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 24px;
+    box-shadow: 0 4px 20px var(--shadow);
+    border: 2px solid var(--border);
+  }
+
+  .decision-list {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .decision-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px 14px;
+    background: var(--sand);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .decision-date {
+    flex-shrink: 0;
+    font-weight: bold;
+    color: var(--orange);
+    white-space: nowrap;
+    min-width: 60px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-light);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  /* ===== COLOR ASSIGNMENTS ===== */
+  .color-orange .day-dot { background: var(--orange); }
+  .color-orange .day-badge { background: var(--orange-light); color: #B35A00; }
+  .color-pink .day-dot { background: var(--pink); }
+  .color-pink .day-badge { background: var(--pink-light); color: #9B1B5A; }
+  .color-green .day-dot { background: var(--green); }
+  .color-green .day-badge { background: var(--green-light); color: #2D6E2D; }
+  .color-blue .day-dot { background: var(--blue); }
+  .color-blue .day-badge { background: var(--blue-light); color: #1B6A9B; }
+  .color-purple .day-dot { background: var(--purple); }
+  .color-purple .day-badge { background: var(--purple-light); color: #5B2D8E; }
+
+  /* ===== MAP NODE CLICK ===== */
+  .map-node { cursor: pointer; }
+  .map-node:hover circle { filter: brightness(1.15); }
+
+  /* ===== MOBILE RESPONSIVE ===== */
+  @media (max-width: 600px) {
+    .container { padding: 0 12px 40px; }
+    .header { padding: 28px 16px 22px; }
+    .header-title { letter-spacing: 2px; }
+    .header-tags { gap: 6px; margin-top: 12px; }
+    .header-tag { padding: 3px 10px; font-size: 11px; }
+
+    .map-section { margin: 16px 0; padding: 14px; border-radius: 16px; }
+    .section-title { font-size: 18px; margin-bottom: 12px; }
+    .map-wrap { overflow-x: hidden; border-radius: 10px; }
+    .map-desktop { display: none; }
+    .map-mobile { display: block; }
+
+    .weather-section { margin: 16px 0 0; padding: 14px; border-radius: 16px; }
+
+    .cost-overview { gap: 8px; margin: 16px 0; }
+    .cost-card { padding: 12px 10px; border-radius: 14px; }
+    .cost-card .icon { font-size: 20px; }
+    .cost-card .amount { font-size: 15px; }
+    .cost-card .unit { font-size: 9px; }
+
+    .timeline { padding-left: 50px; }
+    .day-item { margin-bottom: 12px; }
+
+    .day-card:hover { transform: none; box-shadow: 0 2px 12px var(--shadow); }
+    .day-header { padding: 12px 14px; gap: 6px; flex-wrap: wrap; }
+    .day-badge { order: 1; flex-shrink: 0; padding: 3px 10px; font-size: 11px; }
+    .day-title { order: 2; flex: 1 1 auto; min-width: 0; font-size: 14px; }
+    .day-toggle { order: 3; flex-shrink: 0; margin-left: auto; font-size: 16px; }
+    .day-date { order: 4; flex-basis: 100%; padding-left: 44px; margin-top: 2px; font-size: 10px; color: var(--text-light); }
+
+    .day-summary { padding: 0 14px 10px; gap: 4px; }
+    .summary-tag { font-size: 10px; padding: 2px 8px; border-radius: 8px; }
+    .day-detail { padding: 0 14px 14px; }
+    .detail-item { font-size: 13px; gap: 8px; padding: 6px 0; }
+    .detail-icon { font-size: 15px; }
+
+    .food-section, .tips-section, .decision-section { margin-top: 16px; padding: 14px; border-radius: 16px; }
+    .food-grid, .tips-grid { grid-template-columns: 1fr; gap: 10px; margin-top: 10px; }
+    .food-group { padding: 12px; border-radius: 10px; }
+    .food-group-title { font-size: 13px; }
+    .food-item { font-size: 12px; }
+
+    .footer { padding: 20px 16px; font-size: 11px; }
+  }
+
+  @media (max-width: 400px) {
+    .cost-overview { grid-template-columns: repeat(2, 1fr); }
+    .cost-card { padding: 10px 8px; }
+  }
+</style>
+</head>
+<body>
+
+
+
+<!-- ===== HEADER ===== -->
+<div class="header">
+  <div class="header-title">🏔 新疆北疆11天路书</div>
+  <div class="header-subtitle">阿勒泰深度版 · 乌鲁木齐 · 禾木 · 喀纳斯 · 白哈巴 · 可可托海 · 将军山</div>
+  <div class="header-tags">
+    <span class="header-tag">📅 6.11 - 6.21</span>
+    <span class="header-tag">👥 4人同行</span>
+    <span class="header-tag">🚐 公共交通+包车</span>
+    <span class="header-tag">💰 人均约3,036元</span>
+    <span class="header-tag" style="background:rgba(255,215,0,0.35);border-color:rgba(255,215,0,0.7);">⚡ Plan B</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ===== MAP SECTION ===== -->
+  <div class="map-section">
+    <div class="section-title">路线总览地图</div>
+    <div class="map-wrap">
+      <!-- 桌面横向地图 -->
+      <svg class="map-desktop" viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">
+        <defs>
+          <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#E8F0F8"/>
+            <stop offset="100%" stop-color="#E8F2E8"/>
+          </linearGradient>
+          <marker id="arr-orange" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,5 L5,2.5 z" fill="#FF9544"/></marker>
+          <marker id="arr-pink"   markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,5 L5,2.5 z" fill="#FF6B9D"/></marker>
+          <marker id="arr-green"  markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,5 L5,2.5 z" fill="#52B788"/></marker>
+          <marker id="arr-blue"   markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,5 L5,2.5 z" fill="#4AABDB"/></marker>
+          <marker id="arr-purple" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,5 L5,2.5 z" fill="#9B59B6"/></marker>
+          <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.15)"/>
+          </filter>
+          <filter id="nodeShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,0.2)"/>
+          </filter>
+        </defs>
+        <!-- 背景 -->
+        <rect width="920" height="420" fill="url(#bgGrad)" rx="14"/>
+        <!-- 山脉装饰 -->
+        <path d="M 0,60 C 100,35 200,28 350,32 C 450,36 500,22 600,18 C 700,14 780,20 920,26 L 920,60 Z" fill="#C8DCB8" opacity="0.35"/>
+        <path d="M 300,32 L 318,12 L 336,32 Z" fill="white" opacity="0.6"/>
+        <path d="M 580,18 L 598,0 L 616,18 Z" fill="white" opacity="0.7"/>
+
+        <!-- 图例 -->
+        <rect x="18" y="18" width="165" height="80" rx="8" fill="white" opacity="0.82"/>
+        <text x="30" y="36" font-size="11" fill="#3D2B1F" font-weight="bold">图例</text>
+        <line x1="30" y1="50" x2="58" y2="50" stroke="#FF9544" stroke-width="3"/>
+        <text x="64" y="54" font-size="10" fill="#3D2B1F">包车</text>
+        <line x1="30" y1="66" x2="58" y2="66" stroke="#52B788" stroke-width="2.5" stroke-dasharray="7,3"/>
+        <text x="64" y="70" font-size="10" fill="#3D2B1F">✈ 飞机</text>
+        <line x1="30" y1="82" x2="58" y2="82" stroke="#9B59B6" stroke-width="2.5" stroke-dasharray="5,4"/>
+        <text x="64" y="86" font-size="10" fill="#3D2B1F">✈ 飞机返程</text>
+
+        <!-- 节点坐标：
+          乌鲁木齐   cx=820 cy=80
+          阿勒泰     cx=540 cy=100
+          禾木       cx=340 cy=80
+          喀纳斯     cx=280 cy=160
+          白哈巴     cx=180 cy=220
+          布尔津     cx=400 cy=240
+          可可托海   cx=620 cy=280
+          将军山     cx=560 cy=360
+        -->
+
+        <!-- D2: 乌鲁木齐→阿勒泰 飞机（绿虚线） -->
+        <path d="M 798,82 C 740,88 660,92 560,100"
+              fill="none" stroke="#52B788" stroke-width="3.5" stroke-dasharray="10,4"
+              stroke-linecap="round" marker-end="url(#arr-green)" opacity="0.9"/>
+        <text x="680" y="78" text-anchor="middle" font-size="10.5" fill="#2E8B6A" font-weight="bold">✈ D2 飞阿勒泰 ~300元</text>
+
+        <!-- D2: 阿勒泰→禾木 包车（橙实线） -->
+        <path d="M 520,96 C 470,88 420,82 362,80"
+              fill="none" stroke="#FF9544" stroke-width="4"
+              stroke-linecap="round" marker-end="url(#arr-orange)" opacity="0.9"/>
+        <text x="440" y="104" text-anchor="middle" font-size="9.5" fill="#A05000">包车→禾木 125元/人</text>
+
+        <!-- D4: 禾木→喀纳斯 包车 -->
+        <path d="M 328,92 C 310,118 298,140 286,155"
+              fill="none" stroke="#FF9544" stroke-width="3.5"
+              stroke-linecap="round" marker-end="url(#arr-orange)" opacity="0.9"/>
+        <text x="286" y="128" text-anchor="end" font-size="9" fill="#A05000">1h</text>
+
+        <!-- D5: 喀纳斯→白哈巴 区间车 -->
+        <path d="M 262,172 C 235,190 210,205 198,218"
+              fill="none" stroke="#FF9544" stroke-width="3"
+              stroke-linecap="round" marker-end="url(#arr-orange)" opacity="0.85"/>
+        <text x="215" y="200" text-anchor="middle" font-size="9" fill="#A05000">区间车1h</text>
+
+        <!-- D6: 白哈巴→喀纳斯→布尔津 -->
+        <path d="M 200,232 C 260,240 340,242 388,242"
+              fill="none" stroke="#FF9544" stroke-width="3.5"
+              stroke-linecap="round" marker-end="url(#arr-orange)" opacity="0.9"/>
+        <text x="300" y="256" text-anchor="middle" font-size="9" fill="#A05000">包车 2.5h</text>
+
+        <!-- D7: 布尔津→可可托海 -->
+        <path d="M 422,250 C 480,262 540,272 602,280"
+              fill="none" stroke="#FF9544" stroke-width="3.5"
+              stroke-linecap="round" marker-end="url(#arr-orange)" opacity="0.9"/>
+        <text x="510" y="268" text-anchor="middle" font-size="9" fill="#A05000">包车 5h 125元/人</text>
+
+        <!-- D9: 可可托海→阿勒泰→将军山 -->
+        <path d="M 608,292 C 590,318 575,340 564,352"
+              fill="none" stroke="#FF9544" stroke-width="3.5"
+              stroke-linecap="round" marker-end="url(#arr-orange)" opacity="0.9"/>
+        <text x="606" y="332" text-anchor="middle" font-size="9" fill="#A05000">5-6h</text>
+
+        <!-- D10: 阿勒泰→乌鲁木齐 飞机（紫虚线） -->
+        <path d="M 556,98 C 640,88 720,82 800,80"
+              fill="none" stroke="#9B59B6" stroke-width="2.5" stroke-dasharray="6,5"
+              stroke-linecap="round" marker-end="url(#arr-purple)" opacity="0.85"/>
+        <text x="690" y="120" text-anchor="middle" font-size="10" fill="#9B59B6">D10 ✈ 飞回 ~300元</text>
+
+        <!-- 城市节点 -->
+
+        <!-- 乌鲁木齐 DAY1,11 -->
+        <g class="map-node" onclick="scrollToDay(1)" filter="url(#nodeShadow)">
+          <circle cx="820" cy="80" r="26" fill="#52B788" opacity="0.18"/>
+          <circle cx="820" cy="80" r="20" fill="#52B788" stroke="white" stroke-width="3"/>
+          <polygon points="820,106 811,90 829,90" fill="#52B788"/>
+          <text x="820" y="74" text-anchor="middle" font-size="15">🏙</text>
+          <text x="820" y="87" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">乌鲁木齐</text>
+          <rect x="792" y="110" width="56" height="17" rx="8" fill="#52B788"/>
+          <text x="820" y="123" text-anchor="middle" font-size="10" fill="white" font-weight="bold">D1·D11</text>
+        </g>
+
+        <!-- 阿勒泰 DAY2,9-10 -->
+        <g class="map-node" onclick="scrollToDay(2)" filter="url(#nodeShadow)">
+          <circle cx="540" cy="100" r="22" fill="#FF6B9D" opacity="0.15"/>
+          <circle cx="540" cy="100" r="18" fill="#FF6B9D" stroke="white" stroke-width="2.5"/>
+          <polygon points="540,122 531,106 549,106" fill="#FF6B9D"/>
+          <text x="540" y="95" text-anchor="middle" font-size="13">🏔</text>
+          <text x="540" y="106" text-anchor="middle" font-size="9" fill="white" font-weight="bold">阿勒泰</text>
+          <rect x="508" y="125" width="64" height="17" rx="8" fill="#FF6B9D"/>
+          <text x="540" y="138" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">D2·D9-10</text>
+        </g>
+
+        <!-- 禾木 DAY2-3 -->
+        <g class="map-node" onclick="scrollToDay(2)" filter="url(#nodeShadow)">
+          <circle cx="340" cy="80" r="22" fill="#5CB85C" opacity="0.18"/>
+          <circle cx="340" cy="80" r="18" fill="#5CB85C" stroke="white" stroke-width="2.5"/>
+          <polygon points="340,102 331,86 349,86" fill="#5CB85C"/>
+          <text x="340" y="75" text-anchor="middle" font-size="13">🏡</text>
+          <text x="340" y="86" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">禾木</text>
+          <rect x="308" y="105" width="64" height="17" rx="8" fill="#5CB85C"/>
+          <text x="340" y="118" text-anchor="middle" font-size="10" fill="white" font-weight="bold">D2-3 ★</text>
+        </g>
+
+        <!-- 喀纳斯 DAY4-5 -->
+        <g class="map-node" onclick="scrollToDay(4)" filter="url(#nodeShadow)">
+          <circle cx="280" cy="160" r="22" fill="#4AABDB" opacity="0.18"/>
+          <circle cx="280" cy="160" r="18" fill="#4AABDB" stroke="white" stroke-width="2.5"/>
+          <polygon points="280,182 271,166 289,166" fill="#4AABDB"/>
+          <text x="280" y="155" text-anchor="middle" font-size="13">💧</text>
+          <text x="280" y="166" text-anchor="middle" font-size="9" fill="white" font-weight="bold">喀纳斯</text>
+          <rect x="248" y="185" width="64" height="17" rx="8" fill="#4AABDB"/>
+          <text x="280" y="198" text-anchor="middle" font-size="10" fill="white" font-weight="bold">D4-5</text>
+        </g>
+
+        <!-- 白哈巴 DAY5 -->
+        <g class="map-node" onclick="scrollToDay(5)" filter="url(#shadow)">
+          <circle cx="180" cy="220" r="16" fill="#FF7BAC" stroke="white" stroke-width="2.5"/>
+          <polygon points="180,242 172,226 188,226" fill="#FF7BAC"/>
+          <text x="180" y="215" text-anchor="middle" font-size="13">🏕</text>
+          <text x="180" y="226" text-anchor="middle" font-size="8.5" fill="white" font-weight="bold">白哈巴</text>
+          <rect x="150" y="245" width="60" height="14" rx="7" fill="#FF7BAC"/>
+          <text x="180" y="256" text-anchor="middle" font-size="9.5" fill="white">D5 边境</text>
+        </g>
+
+        <!-- 布尔津 DAY6 -->
+        <g class="map-node" onclick="scrollToDay(6)" filter="url(#shadow)">
+          <circle cx="400" cy="240" r="16" fill="#FF9544" stroke="white" stroke-width="2.5"/>
+          <polygon points="400,262 392,246 408,246" fill="#FF9544"/>
+          <text x="400" y="235" text-anchor="middle" font-size="13">🌅</text>
+          <text x="400" y="246" text-anchor="middle" font-size="8.5" fill="white" font-weight="bold">布尔津</text>
+          <rect x="370" y="265" width="60" height="14" rx="7" fill="#FF9544"/>
+          <text x="400" y="276" text-anchor="middle" font-size="9.5" fill="white">D6 五彩滩</text>
+        </g>
+
+        <!-- 可可托海 DAY7-8 -->
+        <g class="map-node" onclick="scrollToDay(7)" filter="url(#nodeShadow)">
+          <circle cx="620" cy="280" r="22" fill="#2980B9" opacity="0.15"/>
+          <circle cx="620" cy="280" r="18" fill="#2980B9" stroke="white" stroke-width="2.5"/>
+          <polygon points="620,302 611,286 629,286" fill="#2980B9"/>
+          <text x="620" y="275" text-anchor="middle" font-size="13">⛰</text>
+          <text x="620" y="286" text-anchor="middle" font-size="8.5" fill="white" font-weight="bold">可可托海</text>
+          <rect x="588" y="305" width="64" height="17" rx="8" fill="#2980B9"/>
+          <text x="620" y="318" text-anchor="middle" font-size="10" fill="white" font-weight="bold">D7-8</text>
+        </g>
+
+        <!-- 将军山 DAY9 -->
+        <g class="map-node" onclick="scrollToDay(9)" filter="url(#shadow)">
+          <circle cx="560" cy="360" r="16" fill="#9B59B6" stroke="white" stroke-width="2.5"/>
+          <polygon points="560,382 552,366 568,366" fill="#9B59B6"/>
+          <text x="560" y="355" text-anchor="middle" font-size="13">🌇</text>
+          <text x="560" y="366" text-anchor="middle" font-size="8.5" fill="white" font-weight="bold">将军山</text>
+          <rect x="528" y="385" width="64" height="14" rx="7" fill="#9B59B6"/>
+          <text x="560" y="396" text-anchor="middle" font-size="9.5" fill="white">D9 日落★</text>
+        </g>
+
+        <!-- 提示文字 -->
+        <text x="908" y="12" text-anchor="end" font-size="8.5" fill="#B0A090">点击节点跳转行程</text>
+
+        <!-- 底部摘要条 -->
+        <rect x="0" y="398" width="920" height="22" fill="rgba(255,255,255,0.6)"/>
+        <line x1="0" y1="398" x2="920" y2="398" stroke="#D5C4A0" stroke-width="1"/>
+        <text x="460" y="413" text-anchor="middle" font-size="8.5" fill="#7A5C4A">D1 乌鲁木齐 | D2-3 禾木★ | D4 喀纳斯 | D5 白哈巴 | D6 布尔津/五彩滩 | D7-8 可可托海 | D9 将军山日落★ | D10 飞回 | D11 购物返程</text>
+      </svg>
+
+      <!-- 移动端纵向地图 -->
+      <svg class="map-mobile" viewBox="0 0 380 880" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">
+        <defs>
+          <linearGradient id="bgGradM" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#E8F0F8"/>
+            <stop offset="100%" stop-color="#E8F2E8"/>
+          </linearGradient>
+          <marker id="am-orange" markerWidth="5" markerHeight="5" refX="2.5" refY="4" orient="auto"><path d="M0,0 L5,0 L2.5,5 z" fill="#FF9544"/></marker>
+          <marker id="am-green"  markerWidth="5" markerHeight="5" refX="2.5" refY="4" orient="auto"><path d="M0,0 L5,0 L2.5,5 z" fill="#52B788"/></marker>
+          <marker id="am-purple" markerWidth="5" markerHeight="5" refX="2.5" refY="4" orient="auto"><path d="M0,0 L5,0 L2.5,5 z" fill="#9B59B6"/></marker>
+          <filter id="mShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.15)"/></filter>
+        </defs>
+        <rect width="380" height="880" fill="url(#bgGradM)" rx="14"/>
+
+        <!-- 图例 -->
+        <rect x="16" y="10" width="348" height="38" rx="8" fill="white" opacity="0.85"/>
+        <line x1="28" y1="29" x2="50" y2="29" stroke="#FF9544" stroke-width="3"/>
+        <text x="56" y="33" font-size="10" fill="#3D2B1F">包车</text>
+        <line x1="140" y1="29" x2="162" y2="29" stroke="#52B788" stroke-width="2.5" stroke-dasharray="7,3"/>
+        <text x="168" y="33" font-size="10" fill="#3D2B1F">✈ 飞机</text>
+        <line x1="240" y1="29" x2="262" y2="29" stroke="#9B59B6" stroke-width="2" stroke-dasharray="5,4"/>
+        <text x="268" y="33" font-size="10" fill="#3D2B1F">✈ 飞机返程</text>
+
+        <!-- 连接线 -->
+        <!-- D1→D2 乌鲁木齐(右260)→阿勒泰(左100) 飞机虚线 -->
+        <path d="M 260,100 C 260,130 100,140 100,155" fill="none" stroke="#52B788" stroke-width="3" stroke-dasharray="10,4" stroke-linecap="round" marker-end="url(#am-green)" opacity="0.9"/>
+        <text x="190" y="130" text-anchor="middle" font-size="9.5" fill="#2E8B6A">✈ 飞阿勒泰~300元</text>
+
+        <!-- D2 阿勒泰(左100)→禾木(右260) 包车 -->
+        <path d="M 100,195 C 100,225 260,235 260,248" fill="none" stroke="#FF9544" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-orange)" opacity="0.9"/>
+        <text x="190" y="228" text-anchor="middle" font-size="9" fill="#A05000">包车→禾木 125元/人</text>
+
+        <!-- D3→D4 禾木(右260)→喀纳斯(左100) -->
+        <path d="M 260,288 C 260,318 100,328 100,340" fill="none" stroke="#FF9544" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-orange)" opacity="0.9"/>
+        <text x="190" y="320" text-anchor="middle" font-size="9" fill="#A05000">禾木→喀纳斯 1h</text>
+
+        <!-- D4→D5 喀纳斯(左100)→白哈巴(右260) -->
+        <path d="M 100,380 C 100,410 260,420 260,432" fill="none" stroke="#FF9544" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-orange)" opacity="0.9"/>
+        <text x="190" y="412" text-anchor="middle" font-size="9" fill="#A05000">区间车→白哈巴</text>
+
+        <!-- D5→D6 白哈巴(右260)→布尔津(左100) -->
+        <path d="M 260,472 C 260,502 100,512 100,524" fill="none" stroke="#FF9544" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-orange)" opacity="0.9"/>
+        <text x="190" y="504" text-anchor="middle" font-size="9" fill="#A05000">→布尔津 五彩滩</text>
+
+        <!-- D6→D7 布尔津(左100)→可可托海(右260) -->
+        <path d="M 100,564 C 100,594 260,604 260,616" fill="none" stroke="#FF9544" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-orange)" opacity="0.9"/>
+        <text x="190" y="598" text-anchor="middle" font-size="9" fill="#A05000">包车5h 125元/人</text>
+
+        <!-- D8→D9 可可托海(右260)→将军山(左100) -->
+        <path d="M 260,656 C 260,686 100,696 100,708" fill="none" stroke="#FF9544" stroke-width="3.5" stroke-linecap="round" marker-end="url(#am-orange)" opacity="0.9"/>
+        <text x="190" y="690" text-anchor="middle" font-size="9" fill="#A05000">→阿勒泰·将军山</text>
+
+        <!-- D9→D10 将军山(左100)→阿勒泰飞回(右260) -->
+        <path d="M 100,748 C 100,778 260,788 260,800" fill="none" stroke="#9B59B6" stroke-width="2.5" stroke-dasharray="6,5" stroke-linecap="round" marker-end="url(#am-purple)" opacity="0.85"/>
+        <text x="190" y="780" text-anchor="middle" font-size="9" fill="#9B59B6">D10 ✈ 飞回乌市</text>
+
+        <!-- 节点 -->
+        <!-- 乌鲁木齐 DAY1 (右260) -->
+        <g class="map-node" onclick="scrollToDay(1)" filter="url(#mShadow)">
+          <circle cx="260" cy="80" r="20" fill="#52B788" stroke="white" stroke-width="3"/>
+          <text x="260" y="74" text-anchor="middle" font-size="15">🏙</text>
+          <text x="260" y="85" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">乌鲁木齐</text>
+          <rect x="225" y="105" width="70" height="17" rx="8" fill="#52B788"/>
+          <text x="260" y="118" text-anchor="middle" font-size="10" fill="white" font-weight="bold">D1·D11</text>
+        </g>
+
+        <!-- 阿勒泰 DAY2 (左100) -->
+        <g class="map-node" onclick="scrollToDay(2)" filter="url(#mShadow)">
+          <circle cx="100" cy="175" r="18" fill="#FF6B9D" stroke="white" stroke-width="2.5"/>
+          <text x="100" y="170" text-anchor="middle" font-size="13">🏔</text>
+          <text x="100" y="181" text-anchor="middle" font-size="9" fill="white" font-weight="bold">阿勒泰</text>
+          <rect x="65" y="200" width="70" height="17" rx="8" fill="#FF6B9D"/>
+          <text x="100" y="213" text-anchor="middle" font-size="9" fill="white" font-weight="bold">D2·D9-10</text>
+        </g>
+
+        <!-- 禾木 DAY2-3 (右260) -->
+        <g class="map-node" onclick="scrollToDay(2)" filter="url(#mShadow)">
+          <circle cx="260" cy="268" r="20" fill="#5CB85C" stroke="white" stroke-width="3"/>
+          <text x="260" y="263" text-anchor="middle" font-size="15">🏡</text>
+          <text x="260" y="274" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold">禾木</text>
+          <rect x="225" y="293" width="70" height="17" rx="8" fill="#5CB85C"/>
+          <text x="260" y="306" text-anchor="middle" font-size="10" fill="white" font-weight="bold">D2-3 ★</text>
+        </g>
+
+        <!-- 喀纳斯 DAY4 (左100) -->
+        <g class="map-node" onclick="scrollToDay(4)" filter="url(#mShadow)">
+          <circle cx="100" cy="360" r="20" fill="#4AABDB" stroke="white" stroke-width="3"/>
+          <text x="100" y="355" text-anchor="middle" font-size="15">💧</text>
+          <text x="100" y="366" text-anchor="middle" font-size="9" fill="white" font-weight="bold">喀纳斯</text>
+          <rect x="65" y="385" width="70" height="17" rx="8" fill="#4AABDB"/>
+          <text x="100" y="398" text-anchor="middle" font-size="10" fill="white" font-weight="bold">D4-5</text>
+        </g>
+
+        <!-- 白哈巴 DAY5 (右260) -->
+        <g class="map-node" onclick="scrollToDay(5)" filter="url(#mShadow)">
+          <circle cx="260" cy="452" r="17" fill="#FF7BAC" stroke="white" stroke-width="2.5"/>
+          <text x="260" y="447" text-anchor="middle" font-size="14">🏕</text>
+          <text x="260" y="458" text-anchor="middle" font-size="8.5" fill="white" font-weight="bold">白哈巴</text>
+          <rect x="226" y="474" width="68" height="15" rx="7" fill="#FF7BAC"/>
+          <text x="260" y="485" text-anchor="middle" font-size="9.5" fill="white">D5 边境</text>
+        </g>
+
+        <!-- 布尔津 DAY6 (左100) -->
+        <g class="map-node" onclick="scrollToDay(6)" filter="url(#mShadow)">
+          <circle cx="100" cy="544" r="17" fill="#FF9544" stroke="white" stroke-width="2.5"/>
+          <text x="100" y="539" text-anchor="middle" font-size="14">🌅</text>
+          <text x="100" y="550" text-anchor="middle" font-size="8.5" fill="white" font-weight="bold">布尔津</text>
+          <rect x="62" y="566" width="76" height="15" rx="7" fill="#FF9544"/>
+          <text x="100" y="577" text-anchor="middle" font-size="9.5" fill="white">D6 五彩滩</text>
+        </g>
+
+        <!-- 可可托海 DAY7-8 (右260) -->
+        <g class="map-node" onclick="scrollToDay(7)" filter="url(#mShadow)">
+          <circle cx="260" cy="636" r="20" fill="#2980B9" stroke="white" stroke-width="3"/>
+          <text x="260" y="631" text-anchor="middle" font-size="15">⛰</text>
+          <text x="260" y="642" text-anchor="middle" font-size="9" fill="white" font-weight="bold">可可托海</text>
+          <rect x="225" y="661" width="70" height="17" rx="8" fill="#2980B9"/>
+          <text x="260" y="674" text-anchor="middle" font-size="10" fill="white" font-weight="bold">D7-8</text>
+        </g>
+
+        <!-- 将军山 DAY9 (左100) -->
+        <g class="map-node" onclick="scrollToDay(9)" filter="url(#mShadow)">
+          <circle cx="100" cy="728" r="17" fill="#9B59B6" stroke="white" stroke-width="2.5"/>
+          <text x="100" y="723" text-anchor="middle" font-size="14">🌇</text>
+          <text x="100" y="734" text-anchor="middle" font-size="8.5" fill="white" font-weight="bold">将军山</text>
+          <rect x="62" y="750" width="76" height="15" rx="7" fill="#9B59B6"/>
+          <text x="100" y="761" text-anchor="middle" font-size="9.5" fill="white">D9 日落★</text>
+        </g>
+
+        <!-- 乌鲁木齐 D10-11 (右260) -->
+        <g class="map-node" onclick="scrollToDay(10)" filter="url(#mShadow)">
+          <circle cx="260" cy="818" r="17" fill="#52B788" stroke="white" stroke-width="2.5"/>
+          <text x="260" y="813" text-anchor="middle" font-size="14">✈</text>
+          <text x="260" y="824" text-anchor="middle" font-size="8.5" fill="white" font-weight="bold">飞回乌市</text>
+          <rect x="222" y="840" width="76" height="15" rx="7" fill="#52B788"/>
+          <text x="260" y="851" text-anchor="middle" font-size="9.5" fill="white">D10-11 返程</text>
+        </g>
+
+        <!-- 底部摘要 -->
+        <rect x="0" y="860" width="380" height="20" fill="rgba(255,255,255,0.6)"/>
+        <line x1="0" y1="860" x2="380" y2="860" stroke="#D5C4A0" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ===== WEATHER TABLE ===== -->
+  <div class="weather-section">
+    <div class="section-title">分地点精确天气预报</div>
+    <div style="overflow-x:auto;">
+      <table class="weather-table">
+        <thead>
+          <tr>
+            <th>日期</th>
+            <th>乌鲁木齐</th>
+            <th>阿勒泰</th>
+            <th>布尔津</th>
+            <th>禾木/喀纳斯</th>
+            <th>伊宁</th>
+            <th>赛里木湖</th>
+            <th>那拉提</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="date-col">6/11 周四 D1</td>
+            <td class="hl-today">☀️→⛅ 晴转多云 34/23</td>
+            <td>⛅ 多云 34/18</td>
+            <td>⛅→🌦 多云转小雨 35/20</td>
+            <td>☁️→⛅ 阴转多云 30/18</td>
+            <td>🌧 小雨转中雨 30/18</td>
+            <td>🌧 小雨转中雨 17/8</td>
+            <td>🌧 小雨转大雨 31/18</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/12 周五 D2</td>
+            <td>🌧 雨 29/20</td>
+            <td class="hl-today">🌦→⛅ 小雨转多云 30/16</td>
+            <td class="hl-today">🌦→⛅ 小雨转多云 32/18</td>
+            <td class="hl-today">⛅→🌦 多云转小雨 30/17</td>
+            <td>☁️→🌧 阴转雨 30/17</td>
+            <td>🌧 小雨 18/8</td>
+            <td>🌧 雨 28/18</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/13 周六 D3</td>
+            <td>☁️ 阴 27/18</td>
+            <td>⛅→☀️ 多云转晴 31/17</td>
+            <td class="hl-golden">☀️ 晴 32/17</td>
+            <td class="hl-golden">⛅→☀️ 多云转晴 32/19</td>
+            <td>☁️→⛅ 阴转多云 29/15</td>
+            <td>🌧 小雨 19/9</td>
+            <td>🌧 雨 27/14</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/14 周日 D4</td>
+            <td>🌦 雨转阴 26/15</td>
+            <td>⛅ 多云 32/16</td>
+            <td>🌦→⛅ 小雨转多云 33/17</td>
+            <td class="hl-golden">☀️ 晴 32/19</td>
+            <td>🌦→☀️ 雨转晴 31/16</td>
+            <td>🌧 小雨转多云 19/10</td>
+            <td>🌧 雨 29/14</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/15 周一 D5</td>
+            <td>☀️→⛅ 晴转多云 27/17</td>
+            <td class="hl-today">☀️ 晴 33/16</td>
+            <td class="hl-today">☀️ 晴 33/18</td>
+            <td class="hl-today">⛅→☁️ 多云转阴 31/18</td>
+            <td>☀️ 晴 33/17</td>
+            <td>🌧 小雨 21/10</td>
+            <td>☀️ 晴 32/16</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/16 周二 D6</td>
+            <td>☀️→☁️ 晴转阴 30/20</td>
+            <td>☁️ 阴 32/20</td>
+            <td class="hl-today">☁️→🌧 阴转雨 34/20</td>
+            <td class="hl-today">☁️→⛅ 阴转多云 31/18</td>
+            <td>☁️→🌧 阴转雨 37/18</td>
+            <td>🌧 雨 20/10</td>
+            <td>⛅→🌧 多云转雨 35/18</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/17 周三 D7</td>
+            <td>☁️→🌧 阴转雨 30/18</td>
+            <td>☁️ 阴 30/19</td>
+            <td class="hl-today">☁️ 阴 33/20</td>
+            <td class="hl-today">🌧 雨 30/18</td>
+            <td>☁️→🌧 阴转雨 37/17</td>
+            <td>🌧 雨 19/9</td>
+            <td>🌧 雨 35/15</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/18 周四 D8</td>
+            <td>🌦→⛅ 雨转多云 31/21</td>
+            <td class="hl-today">☁️ 阴 29/17</td>
+            <td>☁️ 阴 31/19</td>
+            <td>🌧→☁️ 雨转阴 30/12</td>
+            <td>☀️→☁️ 晴转阴 36/18</td>
+            <td>🌧 雨 19/8</td>
+            <td>🌧→☁️ 雨转阴 35/18</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/19 周五 D9</td>
+            <td>☁️ 阴 33/21</td>
+            <td class="hl-golden">⛅→☀️ 多云转晴 30/16</td>
+            <td>☀️→☁️ 晴转阴 32/17</td>
+            <td class="hl-golden">☀️~⛅ 晴~多云 28/15</td>
+            <td>☀️→⛅ 晴转多云 36/20</td>
+            <td>🌧 雨 18/7</td>
+            <td>🌧 雨 35/19</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/20 周六 D10</td>
+            <td>—</td>
+            <td class="hl-today">☁️→🌧 阴转雨 27/14</td>
+            <td>🌧→⛅ 雨转多云 29/14</td>
+            <td>⛅ 多云 25/12</td>
+            <td>—</td>
+            <td>🌧 雨 18/8</td>
+            <td>🌂 降雨概率25%</td>
+          </tr>
+          <tr>
+            <td class="date-col">6/21 周日 D11</td>
+            <td class="hl-today">🛒 购物返程</td>
+            <td>🌧 雨 28/14</td>
+            <td>⛅→☁️ 多云转阴 33/15</td>
+            <td>🌦 阵雨 26/13</td>
+            <td>—</td>
+            <td>🌧 雨 18/8</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="weather-note">
+      <strong>天气关键结论：</strong><br>
+      ★ <strong>6/13-6/14 阿勒泰黄金日</strong>：禾木多云转晴→晴，正好对应禾木深度游+喀纳斯初入<br>
+      ★ <strong>6/19 天气转好</strong>：阿勒泰多云转晴 → 将军山日落绝佳<br>
+      ⚠️ 赛里木湖6月中旬连续11天雨，基本无缘蓝湖<br>
+      📊 阿勒泰晴天概率约55%，远高于伊犁同期约20%<br>
+      *禾木6/19-21为Ventusky趋势预测 · 数据来源：中国天气网6/8发布
+    </div>
+  </div>
+
+  <!-- ===== TIMELINE ===== -->
+  <div class="timeline-section">
+    <div class="section-title">每日行程详情</div>
+    <div class="timeline">
+
+    <!-- ===== VERTICAL DAY NAV ===== -->
+    <div class="vday-nav" id="vDayNav">
+      <div class="vday-nav-node color-orange" onclick="navToDay(1)">
+        <div class="vday-nav-dot">D1</div>
+        <div class="vday-nav-tooltip">D1 乌鲁木齐</div>
+        <div class="vday-nav-line"></div>
+      </div>
+      <div class="vday-nav-node color-pink" onclick="navToDay(2)">
+        <div class="vday-nav-dot">D2</div>
+        <div class="vday-nav-tooltip">D2 飞阿勒泰→禾木</div>
+        <div class="vday-nav-line"></div>
+      </div>
+      <div class="vday-nav-node color-green" onclick="navToDay(3)">
+        <div class="vday-nav-dot">D3</div>
+        <div class="vday-nav-tooltip">D3 禾木深度★</div>
+        <div class="vday-nav-line"></div>
+      </div>
+      <div class="vday-nav-node color-green" onclick="navToDay(4)">
+        <div class="vday-nav-dot">D4</div>
+        <div class="vday-nav-tooltip">D4 禾木→喀纳斯</div>
+        <div class="vday-nav-line"></div>
+      </div>
+      <div class="vday-nav-node color-pink" onclick="navToDay(5)">
+        <div class="vday-nav-dot">D5</div>
+        <div class="vday-nav-tooltip">D5 喀纳斯→白哈巴</div>
+        <div class="vday-nav-line"></div>
+      </div>
+      <div class="vday-nav-node color-orange" onclick="navToDay(6)">
+        <div class="vday-nav-dot">D6</div>
+        <div class="vday-nav-tooltip">D6 布尔津·五彩滩</div>
+        <div class="vday-nav-line"></div>
+      </div>
+      <div class="vday-nav-node color-blue" onclick="navToDay(7)">
+        <div class="vday-nav-dot">D7</div>
+        <div class="vday-nav-tooltip">D7 可可托海</div>
+        <div class="vday-nav-line"></div>
+      </div>
+      <div class="vday-nav-node color-blue" onclick="navToDay(8)">
+        <div class="vday-nav-dot">D8</div>
+        <div class="vday-nav-tooltip">D8 可可托海深度</div>
+        <div class="vday-nav-line"></div>
+      </div>
+      <div class="vday-nav-node color-purple" onclick="navToDay(9)">
+        <div class="vday-nav-dot">D9</div>
+        <div class="vday-nav-tooltip">D9 将军山日落★</div>
+        <div class="vday-nav-line"></div>
+      </div>
+      <div class="vday-nav-node color-orange" onclick="navToDay(10)">
+        <div class="vday-nav-dot">D10</div>
+        <div class="vday-nav-tooltip">D10 飞回乌鲁木齐</div>
+        <div class="vday-nav-line"></div>
+      </div>
+      <div class="vday-nav-node color-purple" onclick="navToDay(11)">
+        <div class="vday-nav-dot">D11</div>
+        <div class="vday-nav-tooltip">D11 购物返程</div>
+      </div>
+    </div>
+
+      <!-- Day 1 -->
+      <div class="day-item color-orange" id="day-1">
+        <div class="day-dot"></div>
+        <div class="day-card" onclick="toggleDay(this)">
+          <div class="day-header">
+            <span class="day-badge">第 1 天</span>
+            <span class="day-title">🏙 乌鲁木齐 · 抵达落脚</span>
+            <span class="day-date">6月11日 周四</span>
+            <span class="day-toggle">▼</span>
+          </div>
+          <div class="day-summary">
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">☀️→⛅ 乌鲁木齐 · 晴转多云 34/23℃</span>
+            <span class="summary-tag">🛬 飞机抵达</span>
+            <span class="summary-tag">🕌 二道桥大巴扎</span>
+            <span class="summary-tag">🌙 夜市美食</span>
+            <span class="summary-tag">🛏 乌鲁木齐</span>
+          </div>
+          <div class="day-detail">
+            <div class="detail-item">
+              <span class="detail-icon">✈️</span>
+              <div class="detail-content">
+                <strong>机场抵达</strong><br>
+                <span>乘机场大巴至市区 <span class="cost-inline">15元/人</span>，约1小时。入住酒店稍作休息</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🕌</span>
+              <div class="detail-content">
+                <strong>二道桥大巴扎</strong><br>
+                <span>夜市吃喝，烤羊肉串/大盘鸡/抓饭，感受维吾尔族风情</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🛏</span>
+              <div class="detail-content">
+                <strong>住宿</strong>：乌鲁木齐市区 <span class="cost-inline">130-160元/晚/间</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="day-item color-pink" id="day-2">
+        <div class="day-dot"></div>
+        <div class="day-card" onclick="toggleDay(this)">
+          <div class="day-header">
+            <span class="day-badge">第 2 天</span>
+            <span class="day-title">✈️ 乌鲁木齐→阿勒泰→禾木（直达！）</span>
+            <span class="day-date">6月12日 周五</span>
+            <span class="day-toggle">▼</span>
+          </div>
+          <div class="day-summary">
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">🌦 阿勒泰小雨转多云30/16 / 禾木多云转小雨30/17℃</span>
+            <span class="summary-tag">✈️ 早班机飞阿勒泰</span>
+            <span class="summary-tag">🚐 包车直达禾木</span>
+            <span class="summary-tag">🏡 禾木村游览</span>
+            <span class="summary-tag">🛏 禾木木屋</span>
+          </div>
+          <div class="day-detail">
+            <div class="detail-item">
+              <span class="detail-icon">✈️</span>
+              <div class="detail-content">
+                <strong>早班机：乌鲁木齐→阿勒泰</strong> <span class="cost-inline">约280-350元/人</span><br>
+                <span>推荐CZ6861等早班，飞行约1小时</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🚐</span>
+              <div class="detail-content">
+                <strong>包车直达：阿勒泰机场→禾木</strong> <span class="cost-inline">4人包车约500-600元/车，均摊125-150元/人</span><br>
+                <span>经布尔津约4-5小时，下午约14:00-15:00抵达。不住布尔津！直接到禾木</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🎟</span>
+              <div class="detail-content">
+                <strong>禾木门票</strong> <span class="cost-inline">约60元/人（含区间车）</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🏡</span>
+              <div class="detail-content">
+                <strong>下午/傍晚游览</strong><br>
+                <span>禾木村木屋 · 图瓦人村落 · 敖包山观景台</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🛏</span>
+              <div class="detail-content">
+                <strong>住宿</strong>：禾木村内木屋民宿 <span class="cost-inline">150-200元/晚/间</span>（提前预订！）
+              </div>
+            </div>
+            <div class="detail-tip">不住布尔津！阿勒泰机场直接包车到禾木，下午就能开始玩</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="day-item color-green" id="day-3">
+        <div class="day-dot"></div>
+        <div class="day-card" onclick="toggleDay(this)">
+          <div class="day-header">
+            <span class="day-badge">第 3 天</span>
+            <span class="day-title">★ 禾木 · 全天深度</span>
+            <span class="day-date">6月13日 周六</span>
+            <span class="day-toggle">▼</span>
+          </div>
+          <div class="day-summary">
+            <span class="summary-tag" style="background:#FFF9C4;color:#7A5C00;border-color:#FFD54F;">★ 黄金日！全天晴好</span>
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">⛅→☀️ 禾木 · 多云转晴 32/19℃</span>
+            <span class="summary-tag">🌅 敖包山日出晨雾</span>
+            <span class="summary-tag">🐴 骑马去美丽峰</span>
+            <span class="summary-tag">🌇 禾木河日落</span>
+            <span class="summary-tag">🛏 禾木木屋</span>
+          </div>
+          <div class="day-detail">
+            <div class="detail-item">
+              <span class="detail-icon">🌅</span>
+              <div class="detail-content">
+                <strong>早起：敖包山看日出/晨雾</strong>（北京时间05:00-06:00）<br>
+                <span>禾木最精华时刻！晨雾中的禾木村如仙境</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🚶</span>
+              <div class="detail-content">
+                <strong>上午：禾木河边散步</strong><br>
+                <span>图瓦人老屋 · 白桦林 · 河畔漫步</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🐴</span>
+              <div class="detail-content">
+                <strong>下午：骑马去美丽峰</strong> <span class="cost-inline">约150元/小时</span><br>
+                <span>6月山花烂漫，骑马穿越花海</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🌇</span>
+              <div class="detail-content">
+                <strong>傍晚：禾木河畔看日落</strong>（约22:00）<br>
+                <span>光线极好，摄影黄金时刻</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🛏</span>
+              <div class="detail-content"><strong>住宿</strong>：禾木村木屋民宿</div>
+            </div>
+            <div class="detail-tip">禾木住2晚是关键：第1晚熟悉环境，第2天慢悠悠深度感受</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 4 -->
+      <div class="day-item color-green" id="day-4">
+        <div class="day-dot"></div>
+        <div class="day-card" onclick="toggleDay(this)">
+          <div class="day-header">
+            <span class="day-badge">第 4 天</span>
+            <span class="day-title">★ 禾木→喀纳斯</span>
+            <span class="day-date">6月14日 周日</span>
+            <span class="day-toggle">▼</span>
+          </div>
+          <div class="day-summary">
+            <span class="summary-tag" style="background:#FFF9C4;color:#7A5C00;border-color:#FFD54F;">★ 又是黄金日！</span>
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">☀️ 禾木晴32/19 / 喀纳斯晴32/19℃</span>
+            <span class="summary-tag">🚐 区间班车约1h</span>
+            <span class="summary-tag">💧 观鱼台·月亮湾·神仙湾</span>
+            <span class="summary-tag">🛏 喀纳斯景区内</span>
+          </div>
+          <div class="day-detail">
+            <div class="detail-item">
+              <span class="detail-icon">🚐</span>
+              <div class="detail-content">
+                <strong>上午：禾木→喀纳斯</strong> 景区间班车/包车约1小时
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🎟</span>
+              <div class="detail-content">
+                <strong>喀纳斯套票</strong> <span class="cost-inline">约270元/人</span>（门票+景区大巴）<br>
+                <span>核心景点：观鱼台 → 月亮湾 → 神仙湾 → 卧龙湾</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🛏</span>
+              <div class="detail-content">
+                <strong>住宿</strong>：喀纳斯景区内或贾登峪 <span class="cost-inline">150-250元/晚/间</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 5 -->
+      <div class="day-item color-pink" id="day-5">
+        <div class="day-dot"></div>
+        <div class="day-card" onclick="toggleDay(this)">
+          <div class="day-header">
+            <span class="day-badge">第 5 天</span>
+            <span class="day-title">🏕 喀纳斯→白哈巴 · 西北第一村</span>
+            <span class="day-date">6月15日 周一</span>
+            <span class="day-toggle">▼</span>
+          </div>
+          <div class="day-summary">
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">⛅→☁️ 喀纳斯多云转阴31/18（上午尚可）</span>
+            <span class="summary-tag">💧 清晨湖雾最美</span>
+            <span class="summary-tag">🏕 白哈巴·西北第一村</span>
+            <span class="summary-tag">🏔 G219中哈边界峡谷</span>
+            <span class="summary-tag">🛏 白哈巴木屋</span>
+          </div>
+          <div class="day-detail">
+            <div class="detail-item">
+              <span class="detail-icon">💧</span>
+              <div class="detail-content">
+                <strong>上午：喀纳斯核心游览</strong><br>
+                <span>清晨湖雾最美，抓紧好天气拍神仙湾/月亮湾</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🚐</span>
+              <div class="detail-content">
+                <strong>下午：喀纳斯→白哈巴</strong> 景区内区间车约1小时
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🎟</span>
+              <div class="detail-content">
+                <strong>白哈巴门票</strong> <span class="cost-inline">约50元/人+区间车</span><br>
+                <span>西北第一村，哈萨克族+图瓦人村落，中哈边境，G219国道中哈边界大峡谷</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🛏</span>
+              <div class="detail-content">
+                <strong>住宿</strong>：白哈巴村木屋 <span class="cost-inline">150-200元/晚/间</span>
+              </div>
+            </div>
+            <div class="detail-tip">白哈巴比禾木更原生态，游客少，边境风光独特。6月山花遍地<br>⚠️ 需办理边防证，喀纳斯景区售票处即可办理，带身份证</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 6 -->
+      <div class="day-item color-orange" id="day-6">
+        <div class="day-dot"></div>
+        <div class="day-card" onclick="toggleDay(this)">
+          <div class="day-header">
+            <span class="day-badge">第 6 天</span>
+            <span class="day-title">🌅 白哈巴→喀纳斯→布尔津·五彩滩</span>
+            <span class="day-date">6月16日 周二</span>
+            <span class="day-toggle">▼</span>
+          </div>
+          <div class="day-summary">
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">☁️ 白哈巴/喀纳斯阴转多云31/18 / 布尔津阴转雨34/20℃</span>
+            <span class="summary-tag">💧 补拍喀纳斯景点</span>
+            <span class="summary-tag">🌅 五彩滩日落</span>
+            <span class="summary-tag">🛏 布尔津</span>
+          </div>
+          <div class="day-detail">
+            <div class="detail-item">
+              <span class="detail-icon">💧</span>
+              <div class="detail-content">
+                <strong>上午：白哈巴→返回喀纳斯</strong><br>
+                <span>补拍未看完的景点</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🚐</span>
+              <div class="detail-content">
+                <strong>下午：喀纳斯→布尔津</strong> 约2.5小时
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🌅</span>
+              <div class="detail-content">
+                <strong>傍晚：五彩滩</strong> <span class="cost-inline">门票30元</span><br>
+                <span>雅丹地貌+额尔齐斯河日落，约22:00日落前抵达正好</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🛏</span>
+              <div class="detail-content">
+                <strong>住宿</strong>：布尔津县城 <span class="cost-inline">80-120元/晚/间</span>
+              </div>
+            </div>
+            <div class="detail-tip">五彩滩傍晚光线最佳，安排在到达布尔津当天正好</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 7 -->
+      <div class="day-item color-blue" id="day-7">
+        <div class="day-dot"></div>
+        <div class="day-card" onclick="toggleDay(this)">
+          <div class="day-header">
+            <span class="day-badge">第 7 天</span>
+            <span class="day-title">⛰ 布尔津→可可托海 · UNESCO地质公园</span>
+            <span class="day-date">6月17日 周三</span>
+            <span class="day-toggle">▼</span>
+          </div>
+          <div class="day-summary">
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">☁️ 布尔津阴33/20 / 可可托海预计多云20-25℃</span>
+            <span class="summary-tag">🚐 包车约5h 125元/人</span>
+            <span class="summary-tag">⛰ 额尔齐斯大峡谷</span>
+            <span class="summary-tag">🛏 可可托海镇</span>
+          </div>
+          <div class="day-detail">
+            <div class="detail-item">
+              <span class="detail-icon">🚐</span>
+              <div class="detail-content">
+                <strong>上午：布尔津→可可托海</strong> 约5小时<br>
+                <span>经北屯/富蕴，包车约 <span class="cost-inline">500元/车，4人均摊125元</span></span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🎟</span>
+              <div class="detail-content">
+                <strong>下午初览：可可托海景区</strong> <span class="cost-inline">门票约90元+区间车36元=126元</span><br>
+                <span>额尔齐斯大峡谷：花岗岩山峰+碧绿河水</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🛏</span>
+              <div class="detail-content">
+                <strong>住宿</strong>：可可托海镇 <span class="cost-inline">80-130元/晚/间</span>
+              </div>
+            </div>
+            <div class="detail-tip">砍掉乌伦古湖，布尔津直奔可可托海，节省1天留给乌鲁木齐购物</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 8 -->
+      <div class="day-item color-blue" id="day-8">
+        <div class="day-dot"></div>
+        <div class="day-card" onclick="toggleDay(this)">
+          <div class="day-header">
+            <span class="day-badge">第 8 天</span>
+            <span class="day-title">🌿 可可托海 · 深度游</span>
+            <span class="day-date">6月18日 周四</span>
+            <span class="day-toggle">▼</span>
+          </div>
+          <div class="day-summary">
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">☁️ 阿勒泰阴29/17 / 富蕴预计多云20-25℃</span>
+            <span class="summary-tag">🥾 大峡谷徒步</span>
+            <span class="summary-tag">🦆 可可苏里湖</span>
+            <span class="summary-tag">⛏ 三号矿坑（可选）</span>
+            <span class="summary-tag">🛏 可可托海镇</span>
+          </div>
+          <div class="day-detail">
+            <div class="detail-item">
+              <span class="detail-icon">🥾</span>
+              <div class="detail-content">
+                <strong>上午：额尔齐斯大峡谷徒步</strong><br>
+                <span>神钟山 → 瀑布 → 金丝宝石沟</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🦆</span>
+              <div class="detail-content">
+                <strong>下午：可可苏里湖</strong>（野鸭湖）<br>
+                <span>湿地草原+雪山倒影</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">⛏</span>
+              <div class="detail-content">
+                <strong>可选：三号矿坑</strong> <span class="cost-inline">门票约40元</span><br>
+                <span>世界最大稀有金属矿，地质奇观</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🛏</span>
+              <div class="detail-content"><strong>住宿</strong>：可可托海镇</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 9 -->
+      <div class="day-item color-purple" id="day-9">
+        <div class="day-dot"></div>
+        <div class="day-card" onclick="toggleDay(this)">
+          <div class="day-header">
+            <span class="day-badge">第 9 天</span>
+            <span class="day-title">★ 可可托海→阿勒泰·将军山日落</span>
+            <span class="day-date">6月19日 周五</span>
+            <span class="day-toggle">▼</span>
+          </div>
+          <div class="day-summary">
+            <span class="summary-tag" style="background:#FFF9C4;color:#7A5C00;border-color:#FFD54F;">★ 天气转好！</span>
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">⛅→☀️ 阿勒泰 · 多云转晴 30/16℃</span>
+            <span class="summary-tag">🚐 5-6h沿途风光</span>
+            <span class="summary-tag">🌇 将军山日落★</span>
+            <span class="summary-tag">🛏 阿勒泰市区</span>
+          </div>
+          <div class="day-detail">
+            <div class="detail-item">
+              <span class="detail-icon">🚐</span>
+              <div class="detail-content">
+                <strong>上午：可可托海→阿勒泰市</strong> 约5-6小时<br>
+                <span>沿途额尔齐斯河风光 · 北疆草原</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🌇</span>
+              <div class="detail-content">
+                <strong>下午/傍晚：将军山国际度假区</strong> <span class="cost-inline">缆车约80-120元/人</span><br>
+                <span>俯瞰阿勒泰全城+额尔齐斯河。6/19多云转晴！山顶看日落绝佳——"阿勒泰最美日落"<br>
+                山顶有露天电影/夕阳派对等活动</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🛏</span>
+              <div class="detail-content">
+                <strong>住宿</strong>：阿勒泰市区 <span class="cost-inline">100-150元/晚/间</span>
+              </div>
+            </div>
+            <div class="detail-tip">6/19将军山天气是后半程最好的一天，运气不错！</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 10 -->
+      <div class="day-item color-orange" id="day-10">
+        <div class="day-dot"></div>
+        <div class="day-card" onclick="toggleDay(this)">
+          <div class="day-header">
+            <span class="day-badge">第 10 天</span>
+            <span class="day-title">✈️ 阿勒泰→乌鲁木齐 · 飞回</span>
+            <span class="day-date">6月20日 周六</span>
+            <span class="day-toggle">▼</span>
+          </div>
+          <div class="day-summary">
+            <span class="summary-tag" style="background:#E3F2FD;color:#1565C0;border-color:#90CAF9;">☁️→🌧 阿勒泰阴转雨27/14℃</span>
+            <span class="summary-tag">✈️ 早班机飞回</span>
+            <span class="summary-tag">🏙 乌鲁木齐自由活动</span>
+            <span class="summary-tag">🛏 乌鲁木齐</span>
+          </div>
+          <div class="day-detail">
+            <div class="detail-item">
+              <span class="detail-icon">✈️</span>
+              <div class="detail-content">
+                <strong>上午航班：阿勒泰→乌鲁木齐</strong> <span class="cost-inline">约280-350元/人</span><br>
+                <span>推荐早班机，约12:00前抵达</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🏙</span>
+              <div class="detail-content">
+                <strong>下午：乌鲁木齐市区自由活动</strong><br>
+                <span>休整，可去大巴扎补充购物</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🛏</span>
+              <div class="detail-content">
+                <strong>住宿</strong>：乌鲁木齐市区 <span class="cost-inline">130-160元/晚/间</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 11 -->
+      <div class="day-item color-purple" id="day-11">
+        <div class="day-dot"></div>
+        <div class="day-card" onclick="toggleDay(this)">
+          <div class="day-header">
+            <span class="day-badge">第 11 天</span>
+            <span class="day-title">🛒 乌鲁木齐·购物+返程</span>
+            <span class="day-date">6月21日 周日</span>
+            <span class="day-toggle">▼</span>
+          </div>
+          <div class="day-summary">
+            <span class="summary-tag">🛒 大巴扎购物</span>
+            <span class="summary-tag">🍽 最后美食</span>
+            <span class="summary-tag">🏁 11天旅程结束</span>
+          </div>
+          <div class="day-detail">
+            <div class="detail-item">
+              <span class="detail-icon">🛒</span>
+              <div class="detail-content">
+                <strong>上午：国际大巴扎购物</strong><br>
+                <span>葡萄干 · 巴旦木 · 薰衣草精油 · 英吉沙小刀 · 新疆干果</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🍽</span>
+              <div class="detail-content">
+                <strong>中午：最后一顿正宗新疆美食</strong><br>
+                <span>大盘鸡 / 烤全羊</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🏁</span>
+              <div class="detail-content">
+                <strong>下午：前往机场/火车站，返程</strong><br>
+                <span>11天阿勒泰深度之旅圆满结束！</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.timeline -->
+  </div>
+
+  <!-- ===== FOOD SECTION ===== -->
+  <div class="food-section">
+    <div class="section-title">必吃美食</div>
+    <div class="food-grid">
+      <div class="food-group">
+        <div class="food-group-title">🏙 乌鲁木齐</div>
+        <div class="food-item">烤羊肉串（5元/串）</div>
+        <div class="food-item">烤包子（3元/个）</div>
+        <div class="food-item">大盘鸡（70-80元/份）</div>
+        <div class="food-item">抓饭（20元/份）</div>
+      </div>
+      <div class="food-group">
+        <div class="food-group-title">🏡 禾木/白哈巴</div>
+        <div class="food-item">手抓肉（整只羊腿）</div>
+        <div class="food-item">马奶酒（哈萨克牧民）</div>
+        <div class="food-item">奶疙瘩（乳酪）</div>
+        <div class="food-item">馕坑肉</div>
+        <div class="food-item">烤全羊（提前预约）</div>
+      </div>
+      <div class="food-group">
+        <div class="food-group-title">⛰ 可可托海/阿勒泰</div>
+        <div class="food-item">额尔齐斯河鱼</div>
+        <div class="food-item">布尔津烤鱼</div>
+        <div class="food-item">阿勒泰手抓饭</div>
+        <div class="food-item">风干肉</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TIPS SECTION ===== -->
+  <div class="tips-section">
+    <div class="section-title" style="color: var(--blue);">出行必备提示</div>
+    <div class="tips-grid">
+      <div class="tip-item"><span class="tip-icon">☀️</span><span><strong>阿勒泰天气优势</strong>：6月中旬阿勒泰晴天率远高于伊犁，这是本次改路线的核心原因</span></div>
+      <div class="tip-item"><span class="tip-icon">🧴</span><span>防晒必备：SPF50+防晒霜+帽子+太阳镜（海拔高紫外线强）</span></div>
+      <div class="tip-item"><span class="tip-icon">🧥</span><span>保暖衣物：喀纳斯/禾木海拔1300-1500m，夜间最低8-12℃，带冲锋衣</span></div>
+      <div class="tip-item"><span class="tip-icon">⏰</span><span>新疆实际时间比北京时间慢约2小时，日落约22:00</span></div>
+      <div class="tip-item"><span class="tip-icon">📋</span><span><strong>边防证</strong>：白哈巴需边防证，喀纳斯售票处办理，带身份证即可</span></div>
+      <div class="tip-item"><span class="tip-icon">🚐</span><span><strong>包车建议</strong>：4人包车全程最划算，建议在阿勒泰找固定师傅跟完全程</span></div>
+      <div class="tip-item"><span class="tip-icon">📱</span><span>下载APP：12306、飞猪、高德地图、Windy.com</span></div>
+      <div class="tip-item"><span class="tip-icon">🎟</span><span>提前订票：乌鲁木齐↔阿勒泰机票提前1周以上购买</span></div>
+    </div>
+  </div>
+
+  <!-- ===== DECISION TABLE ===== -->
+  <div class="decision-section">
+    <div class="section-title">关键决策时间表</div>
+    <div class="decision-list">
+      <div class="decision-item">
+        <span class="decision-date">立即</span>
+        <span>购乌鲁木齐→阿勒泰机票 · 阿勒泰→乌鲁木齐回程机票</span>
+      </div>
+      <div class="decision-item">
+        <span class="decision-date">立即</span>
+        <span>预订禾木村木屋民宿（2晚） · 白哈巴村木屋民宿（1晚）</span>
+      </div>
+      <div class="decision-item">
+        <span class="decision-date">出发前3天</span>
+        <span>查6/17-6/20伊犁天气预报，<strong>决定是否走灵活方案去那拉提</strong></span>
+      </div>
+      <div class="decision-item">
+        <span class="decision-date">6/17 在布尔津</span>
+        <span><strong>最终决定</strong>：继续可可托海 OR 飞伊宁去那拉提</span>
+      </div>
+      <div class="decision-item">
+        <span class="decision-date">每天早上</span>
+        <span>查Windy.com确认当天天气，调整游览节奏</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FLEXIBLE PLAN ===== -->
+  <div class="decision-section" style="border-color:#9B59B6;background:linear-gradient(135deg,#F5F0FA,#FBF5E6);">
+    <div class="section-title" style="color:#9B59B6;">🔀 灵活方案：如果伊犁天气转好</div>
+    <div class="decision-list">
+      <div class="decision-item">
+        <span class="decision-date" style="background:#9B59B6;">决策点</span>
+        <span>6/17在布尔津时查看6/18-6/20伊犁天气预报</span>
+      </div>
+      <div class="decision-item">
+        <span class="decision-date" style="background:#2980B9;">替换D7</span>
+        <span>原：布尔津→可可托海 → <strong>替换</strong>：布尔津→阿勒泰→伊宁（直飞约530元）</span>
+      </div>
+      <div class="decision-item">
+        <span class="decision-date" style="background:#4AABDB;">替换D8</span>
+        <span>原：可可托海 → <strong>替换</strong>：赛里木湖（如天气放晴）</span>
+      </div>
+      <div class="decision-item">
+        <span class="decision-date" style="background:#5CB85C;">替换D9</span>
+        <span>原：可可托海→将军山 → <strong>替换</strong>：那拉提草原</span>
+      </div>
+      <div class="decision-item">
+        <span class="decision-date" style="background:#FF6B9D;">替换D10</span>
+        <span>原：阿勒泰→乌鲁木齐 → <strong>替换</strong>：那拉提→伊宁→乌鲁木齐</span>
+      </div>
+      <div class="decision-item" style="border-left-color:#E74C3C;">
+        <span class="decision-date" style="background:#E74C3C;">⚠️ 判断</span>
+        <span>那拉提6/20降雨概率25%→值得冒险去 · 赛里木湖仍雨→不去 · 伊犁全雨→继续阿勒泰主线</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== COMPARISON TABLE ===== -->
+  <div class="weather-section" style="border-color:#FF9544;">
+    <div class="section-title" style="color:#FF9544;">📊 与原版（伊犁线）对比</div>
+    <div style="overflow-x:auto;">
+      <table class="weather-table">
+        <thead>
+          <tr>
+            <th>项目</th>
+            <th>原版（纯伊犁）</th>
+            <th style="background:#E8F5E9;">新版（阿勒泰主线）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="date-col">核心区域</td><td>伊犁</td><td style="background:#E8F5E9;font-weight:bold;">阿勒泰</td></tr>
+          <tr><td class="date-col">禾木+喀纳斯</td><td>无</td><td style="background:#E8F5E9;">4天（2晚禾木+2晚喀纳斯/白哈巴）</td></tr>
+          <tr><td class="date-col">白哈巴</td><td>无</td><td style="background:#E8F5E9;">新增1天</td></tr>
+          <tr><td class="date-col">可可托海</td><td>无</td><td style="background:#E8F5E9;">新增2天（UNESCO地质公园）</td></tr>
+          <tr><td class="date-col">将军山</td><td>无</td><td style="background:#E8F5E9;">新增半天</td></tr>
+          <tr><td class="date-col">赛里木湖</td><td>有</td><td style="background:#FFEBEE;">天气太差，砍掉</td></tr>
+          <tr><td class="date-col">那拉提</td><td>有</td><td>灵活可选（看天气）</td></tr>
+          <tr><td class="date-col">特克斯/霍城</td><td>有</td><td style="background:#FFEBEE;">砍掉</td></tr>
+          <tr><td class="date-col">晴天概率</td><td>~20%</td><td style="background:#E8F5E9;font-weight:bold;color:#1B5E20;">~55%</td></tr>
+          <tr><td class="date-col">户外自然比例</td><td>约60%</td><td style="background:#E8F5E9;font-weight:bold;color:#1B5E20;">约90%</td></tr>
+          <tr><td class="date-col">人均费用</td><td>~2,524元</td><td style="background:#E8F5E9;">~3,036元（+512元）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== COST OVERVIEW ===== -->
+  <div class="cost-overview" style="margin-top:24px;">
+    <div class="cost-card">
+      <div class="icon">✈️</div>
+      <div class="label">来程大交通</div>
+      <div class="amount">~300元</div>
+      <div class="unit">出发地→乌鲁木齐</div>
+    </div>
+    <div class="cost-card">
+      <div class="icon">🛫</div>
+      <div class="label">乌鲁木齐→阿勒泰</div>
+      <div class="amount">~300元</div>
+      <div class="unit">单程机票</div>
+    </div>
+    <div class="cost-card">
+      <div class="icon">🛬</div>
+      <div class="label">阿勒泰→乌鲁木齐</div>
+      <div class="amount">~300元</div>
+      <div class="unit">单程机票</div>
+    </div>
+    <div class="cost-card">
+      <div class="icon">🏨</div>
+      <div class="label">住宿10晚</div>
+      <div class="amount">~580元</div>
+      <div class="unit">乌市2+禾木2+喀/白2+布尔津1+可可托海2+阿勒泰1</div>
+    </div>
+    <div class="cost-card">
+      <div class="icon">🚐</div>
+      <div class="label">包车（多段）</div>
+      <div class="amount">~420元</div>
+      <div class="unit">阿→禾木+禾→喀+喀→布尔津+布→可可托海→阿勒泰</div>
+    </div>
+    <div class="cost-card">
+      <div class="icon">🎟</div>
+      <div class="label">景点门票</div>
+      <div class="amount">~636元</div>
+      <div class="unit">喀纳斯270+白哈巴50+禾木60+可可托海126+五彩滩30+将军山100</div>
+    </div>
+    <div class="cost-card">
+      <div class="icon">🍽</div>
+      <div class="label">餐饮</div>
+      <div class="amount">~500元</div>
+      <div class="unit">含特色美食</div>
+    </div>
+    <div class="cost-card">
+      <div class="icon">💰</div>
+      <div class="label">人均总费用</div>
+      <div class="amount">~3,036元</div>
+      <div class="unit">不含来程大交通+个人消费</div>
+    </div>
+  </div>
+
+</div><!-- /.container -->
+
+<div class="footer">
+  新疆北疆11天路书（阿勒泰深度版 · Plan B） · 6.11-6.21 · 4人公共交通+包车版<br>
+  路线：乌鲁木齐 ✈→ 阿勒泰 → 禾木(2晚) → 喀纳斯 → 白哈巴 → 布尔津/五彩滩 → 可可托海(2晚) → 将军山 → 阿勒泰 ✈→ 乌鲁木齐<br>
+  数据来源：中国天气网+Ventusky，价格仅供参考，以实际购票为准<br>
+  <span style="color: var(--orange);">⚠️ 比原版伊犁方案贵约510元，但天气体验好太多；如走灵活方案去伊犁，额外增加阿→伊机票530元</span>
+</div>
+
+<script>
+  function toggleDay(card) {
+    card.classList.toggle('open');
+  }
+
+  function scrollToDay(dayNum) {
+    const el = document.getElementById('day-' + dayNum);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const card = el.querySelector('.day-card');
+      if (card && !card.classList.contains('open')) {
+        card.classList.add('open');
+      }
+      el.style.transition = 'opacity 0.3s';
+      el.style.opacity = '0.4';
+      setTimeout(() => { el.style.opacity = '1'; }, 300);
+    }
+  }
+
+  // Map layout switch for mobile/desktop
+  function switchMapLayout() {
+    var desktop = document.querySelector('.map-desktop');
+    var mobile = document.querySelector('.map-mobile');
+    if (!desktop || !mobile) return;
+    if (window.innerWidth <= 600) {
+      desktop.style.display = 'none';
+      mobile.style.display = 'block';
+    } else {
+      desktop.style.display = 'block';
+      mobile.style.display = 'none';
+    }
+  }
+  window.addEventListener('resize', switchMapLayout);
+
+  // ===== VERTICAL DAY NAV LOGIC =====
+  (function() {
+    var navNodes = [];
+    var dayItems = [];
+    var activeDay = -1;
+
+    function init() {
+      dayItems = Array.from({ length: 11 }, function(_, i) {
+        return document.getElementById('day-' + (i + 1));
+      });
+      navNodes = Array.from(document.querySelectorAll('.vday-nav-node'));
+    }
+
+    // 高亮当前可见的 day（取最靠近顶部的那张卡片）
+    function updateActiveDay() {
+      var best = -1;
+      for (var i = 0; i < dayItems.length; i++) {
+        if (!dayItems[i]) continue;
+        var rect = dayItems[i].getBoundingClientRect();
+        if (rect.top <= 80) {
+          best = i;
+        }
+      }
+      if (best !== activeDay) {
+        activeDay = best;
+        navNodes.forEach(function(node, i) {
+          node.classList.toggle('active', i === best);
+        });
+      }
+    }
+
+    window.addEventListener('scroll', updateActiveDay, { passive: true });
+
+    // 点击导航跳转
+    window.navToDay = function(dayNum) {
+      var el = document.getElementById('day-' + dayNum);
+      if (!el) return;
+      var card = el.querySelector('.day-card');
+      if (card && !card.classList.contains('open')) {
+        card.classList.add('open');
+      }
+      var top = el.getBoundingClientRect().top + window.pageYOffset - 20;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    };
+
+    window.addEventListener('load', function() {
+      init();
+      updateActiveDay();
+    });
+  })();
+
+  // Auto-open Day 1 on load
+  window.addEventListener('load', function() {
+    const firstCard = document.querySelector('#day-1 .day-card');
+    if (firstCard) firstCard.classList.add('open');
+    switchMapLayout();
+  });
+</script>
+</body>
+</html>
